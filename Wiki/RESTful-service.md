@@ -567,20 +567,20 @@ The error is raised when the plug-in REST handler catches unhandled error, for e
 
 APEX Offce Edit logs every request made to the plug-in RESTful service handlers. When an error is raised it is displayed to the end-user. All REST handlers errors includes unique REST log ID allowing easy debugging with REST logs table.
 
-![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-093713.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-093721.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-093731.png?api=v2)
-
-![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-093741.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-093749.png?api=v2)
+| ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_example_1.png?raw=true) | ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_example_2.png?raw=true) | ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_example_3.png?raw=true) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_example_4.png?raw=true) | ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_example_5.png?raw=true) |                                                              |
 
 APEX Office Edit sample application is deliviered with REST logs viewer and it supports debugging REST handler errors with simple report. Lets assume that while creating a new document an unexpected error was raised as on the image below.
 
-![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-095721.png?api=v2)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_step_1.png?raw=true)
 
 In order to learn what caused an unexpected error while craeting a new document copy the debug ID **1931652608631445**. Click the button **REST logs**.
 
-![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-095116.png?api=v2)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_step_2.png?raw=true)
 
 In region **Reports settings** set **Documents logs** to **REST request ID**. In the result a new field **REST request unique ID** is shown. Paste copied debug ID and in the region **Filters** set **REST handler level** to **Yes**, and set **Creating blank document** to **Yes**. In the result REST logs will be showing logs only for given debug ID.
 
-![](https://united-codes.atlassian.net/wiki/download/attachments/1966604292/image-20220515-100421.png?api=v2)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_err_debug_step_3.png?raw=true)
 
 The logs and the error logged in REST logs table clearly shows that given procedure name for insert callback (the plug-in attribute **On Document Create Callback)** doesn’t exists.
