@@ -193,6 +193,10 @@ This section describes first steps how to create the plug-in instance implementi
 
 ## Default table
 
+1. Create a new empty page
+
+
+
 |     |     |     |
 | --- | --- | --- |
 |     |     |     |
