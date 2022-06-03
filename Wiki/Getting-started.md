@@ -77,7 +77,7 @@ In this screen you can see all errors. If no errors are raised the sample applic
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_10.png?raw=true)
 
-### The plug-in configuration
+### The plug-in REST service configuration
 
 1. Go to application Shared Components
 2. Go to Other Components \\ Plug-ins
@@ -113,15 +113,79 @@ In this screen you can see all errors. If no errors are raised the sample applic
 
 ## Manual installation
 
-|     |     |     |
-| --- | --- | --- |
-|     | **Intructions** | **Example Screenshots** |
-| 1   | **Running installation DDL Script** |     |
-| 2   | 1.  Go to SQL Workshop \\ SQL Scripts<br>    <br>2.  Click button Upload<br>    <br>3.  In the Upload Script select installation file ddl\_unitedcodes\_apex\_office\_edit.sql<br>    <br>4.  Click the button Upload<br>    <br>5.  After installation script is successfuly uploaded click the button Run<br>    <br>6.  On the confirmation screen click the button Run now<br>    <br>7.  Execution of the script should not raise errors | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-092958.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-093106.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-093153.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-093325.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-093707.png?api=v2) |
-| 3   | **Installing the plug-in in an example application** |     |
-| 4   | 1.  Go to APEX application builder home page<br>    <br>2.  Select the application in which you want to use APEX Office Edit<br>    <br>3.  Go to Shared Components \\ Plug-ins<br>    <br>4.  Click the button Import<br>    <br>5.  In import step select the APEX Office Edit plug-in installation file **region\_type\_plugin\_unitedcodes\_aoe.sql**<br>    <br>6.  Click the button Next<br>    <br>7.  In import **File Import Confirmation** step click the button Next<br>    <br>8.  In import **Install Plug-in** step click the button Install Plug-in<br>    <br>9.  After successful installation you need to update the plug-in component settings | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094005.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094047.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094223.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094319.png?api=v2) |
-| 5   | **Configuring the plug-in component settings for REST service** |     |
-| 6   | 1.  After successful installation, configuring the plug-in component settings is required<br>    <br>2.  Open SQL Workshop \\ RESTful Services in the browser new tab<br>    <br>3.  Select module **APEX Office Edit**<br>    <br>4.  Copy value of an **Full URL** module attribute<br>    <br>5.  Close the browser tab and go back to tab with the plug-in component settings<br>    <br>6.  Paste copied URL to URL to RESTful service module and add sufix **files/**<br>    <br>7.  Click the button Apply Changes<br>    <br><br>In order to create first APEX Office instance please follow instruction **Creating the plug-in instance in an existing application** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094529.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094831.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094947.png?api=v2) |
+### Running installation DDL Script
+
+1. Go to SQL Workshop \ SQL Scripts
+2. Click button Upload
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_1.png?raw=true)
+
+3. In the Upload Script select installation file ddl_unitedcodes_apex_office_edit.sql
+2. Click the button Upload
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_2.png?raw=true)
+
+5. After the script is successfuly uploaded click the button Run
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_3.png?raw=true)
+
+6. On the confirmation screen click the button Run now
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_4.png?raw=true)
+
+7. Execution of the script should not raise errors
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_5.png?raw=true)
+
+### Installing the plug-in in an example application
+
+1. Go to APEX application builder home page
+2. Select the application in which you want to use APEX Office Edit
+3. Go to Shared Components \ Plug-ins
+4. Click the button Import
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_1.png?raw=true)
+
+5. In import step select the APEX Office Edit plug-in installation file **region_type_plugin_unitedcodes_aoe.sql**
+2. Click the button Next
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_2.png?raw=true)
+
+7. In import **File Import Confirmation** step click the button Next
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_3.png?raw=true)
+
+8. In import **Install Plug-in** step click the button Install Plug-in
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_4.png?raw=true)
+
+After successful installation you need to update the plug-in component settings. Go to the next step 
+
+### The plug-in REST service configuration
+
+1. Go to application Shared Components
+2. Go to Other Components \\ Plug-ins
+3. Select region plug-in UC - APEX Office Edit (AOE)
+4. Read help texts for attributes “Server-Side URL(Value Required)” and “URL to RESTful service module(Value Required)“
+5. Proceed to the next step in this instruction
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_comp_1.png?raw=true)
+
+6. From the top bar menu select SQL Workshops \ RESTful services
+2. Select module APEX Office Edit
+3. Copy value of an “Full URL” module attribute
+4. Go back to the plug-in component settings from this instruction previous step
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_comp_2.png?raw=true)
+
+10. Replace the default value “[http://www.apexrnd.be/ords181/aoe/aoe/files/”](https://united-codes.atlassian.net/wiki/spaces/UCAOE/pages/1966374926/Getting+started#) with the “Full URL” copied in this instructions previous step (preserve the suffix “files/”)
+2. Click the button “Apply Changes”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_comp_3.png?raw=true)
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_comp_4.png?raw=true)
+
+In order to create first APEX Office instance please follow instruction **Creating the plug-in instance in an existing application**
 
 # Creating the plug-in instance in an existing application
 
