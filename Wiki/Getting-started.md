@@ -1,8 +1,6 @@
-# Getting started
-
 This section describes first steps with APEX Office Edit from the perspective of Oracle APEX.
 
-## Installation
+# Installation
 
 The plug-in implementing APEX Office Edit can be installed in two scenarios:
 
@@ -11,15 +9,42 @@ The plug-in implementing APEX Office Edit can be installed in two scenarios:
 *   installation using DDL script and the Oracle APEX plug-in installation file (manual installation)
     
 
-### Sample application
+## Sample application
+
+### **Importing sample application**
+
+1. Log into your application builder
+2. Click on the tile Import to start APEX wizard installing application from the application installation file
+3. Make sure the schema in which you want to install sample application is REST enabled
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_1.png?raw=true)
+
+4. Click on the region “Drag and Drop”
+5. Select sample application file
+6. Click the button “Next”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_2.png?raw=true)
+
+7.  Click on the region “Drag and Drop”
+8.  Select sample application file
+9.  Click the button “Next”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_3.png?raw=true)
+
+After successful uploading the application installation file, the APEX shows confirmation step.
+
+10. Click the button “Next”
+10. Configure or use default values in the form
+12. Click the button “Install Application”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_4.png?raw=true)
+
+
 
 |     |     |     |
 | --- | --- | --- |
 |     | **Step** | **Example step screenshot** |
 | 1   | **Importing sample application** |     |
-| 2   | **Importing sample application installation file**<br><br>1.  Log into your application builder<br>    <br>2.  Click the button Import to start APEX wizard installing application from the application installation file<br>    <br>3.  Make sure the schema in which you want to install sample application is REST enabled | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-141925.png?api=v2) |
-| 3   | **Selecting the sample application installation file**<br><br>1.  Click on the region “Drag and Drop”<br>    <br>2.  Select sample application file<br>    <br>3.  Click the button “Next” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142002.png?api=v2) |
-| 4   | **File Import Confirmation**<br><br>After successful uploading the application installation file, the APEX wizard confirmation step.<br><br>1.  Click the button “Next” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142213.png?api=v2) |
 | 5   | **Install Database Application**<br><br>1.  Configure or use default values in the form<br>    <br>2.  Click the button “Install Application” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142234.png?api=v2) |
 | 6   | **Installing the application**<br><br>1.  Don’t close the page<br>    <br>2.  Wait until APEX finishes installing the application. When installing the application you will be redirected to the next step. | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142248.png?api=v2) |
 | 7   | **Install supporting objects**<br><br>In order to run the sample application, all sample application supporting objects must be installed.<br><br>1.  Make sure switch “Install Supporting Objects” is checked<br>    <br>2.  Click the button “Next” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142303.png?api=v2) |
@@ -34,7 +59,7 @@ The plug-in implementing APEX Office Edit can be installed in two scenarios:
 | 16  | **Testing the sample application** |     |
 | 17  | **Test the sample application**<br><br>1.  Run the sample application<br>    <br>2.  Click on document icon you wish to create<br>    <br>3.  If configuring the plug-in component settings was done right, a new document should be created and opened in the plug-in editor | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142736.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142819.png?api=v2) |
 
-### Manual installation
+## Manual installation
 
 |     |     |     |
 | --- | --- | --- |
@@ -46,11 +71,11 @@ The plug-in implementing APEX Office Edit can be installed in two scenarios:
 | 5   | **Configuring the plug-in component settings for REST service** |     |
 | 6   | 1.  After successful installation, configuring the plug-in component settings is required<br>    <br>2.  Open SQL Workshop \\ RESTful Services in the browser new tab<br>    <br>3.  Select module **APEX Office Edit**<br>    <br>4.  Copy value of an **Full URL** module attribute<br>    <br>5.  Close the browser tab and go back to tab with the plug-in component settings<br>    <br>6.  Paste copied URL to URL to RESTful service module and add sufix **files/**<br>    <br>7.  Click the button Apply Changes<br>    <br><br>In order to create first APEX Office instance please follow instruction **Creating the plug-in instance in an existing application** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094529.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094831.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220512-094947.png?api=v2) |
 
-## Creating the plug-in instance in an existing application
+# Creating the plug-in instance in an existing application
 
 This section describes first steps how to create the plug-in instance implementing APEX Office Edit. If any plug-in attribute purpose is not clear please read help texts defined for each attribute.
 
-### Default table
+## Default table
 
 |     |     |     |
 | --- | --- | --- |
@@ -61,11 +86,11 @@ This section describes first steps how to create the plug-in instance implementi
 | 4   | Configure the plug-in<br><br>1.  Go to region **APEX Office Edit on default table \\ Attributes**<br>    <br>2.  Set **Item Containing Primary Key Value** to **P4\_DOCUMENT\_ID**<br>    <br>3.  Save and run the page | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220513-161642.png?api=v2) |
 | 5   | In the result, the plug-in is prepared to start creating a first document. Clicking on document icon creates a blank document of selected type.<br><br>Continue basic implementation in section **Loading documents into APEX Office Edit** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-125617.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-125814.png?api=v2) |
 
-## Loading documents into APEX Office Edit
+# Loading documents into APEX Office Edit
 
 This section describes first steps how to load document into APEX Office Edit. The plug-in state is based on APEX Session State for page items defined as primary key(s). If the given item(s) is/are NULL the plug-in shows panel allowing the end-user to create a new document. In order to load document to the APEX Office Edit, item(s) must not be NULL, and the plug-in configuration must be valid.
 
-### Default table
+## Default table
 
 The instructions presented below are meant to be the continuation of **Creating the plug-in instance in an existing application**.
 
