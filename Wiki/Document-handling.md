@@ -1,6 +1,4 @@
-# Document handling
-
-## Default table
+# Default table
 
 By the default, the plug-in uses default table **AOE\_FILES\_DEFAULT** to store documents. The default table uses sequence **AOE\_FILES\_DEFAULT\_SEQ** and trigger **BI\_AOE\_FILES\_DEFAULT**. The default table, trigger and sequence are created along with sample application and by the plug-in DDL installation script.
 
@@ -14,13 +12,13 @@ By the default, the plug-in uses default table **AOE\_FILES\_DEFAULT** to store 
 | VERSION | NUMBER | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | Column is used to store a document current version |
 | LAST\_UPDATE\_DATE | TIMESTAMP(6) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | Column is used to store a document last modification time |
 
-## Flows
+# Flows
 
 Creating, loading, and updating documents are the result of communication between the AOE host server and the plug-in through the plug-in Oracle REST service handlers. If the process is interrupted by PL/SQL error raised by the RESTful Service handler, the plug-in shows a user-friendly error to the end-user described in [RESTful service \ Error Handling](https://github.com/United-Codes/apexofficeedit-public/wiki/RESTful-service#error-handling).
 
 **The flows described below are illustrative and should be considered as-is.**
 
-### Loading documents
+## Loading documents
 
 1.  The end-user initializes loading a document (for example through a classic report showing all documents)
     
@@ -53,7 +51,7 @@ Creating, loading, and updating documents are the result of communication betwee
 7.  The plug-in triggers the event **AOE Document loaded**
     
 
-### Creating a new document
+## Creating a new document
 
 1.  The end-user initializes creating a new document
     
@@ -79,7 +77,7 @@ Creating, loading, and updating documents are the result of communication betwee
     3.  Go to flow **Loading documents**
         
 
-### Saving document content
+## Saving document content
 
 1.  The end-user clicks the button **Save** (or click menu position **File \\ Save**)
     
@@ -104,7 +102,7 @@ Creating, loading, and updating documents are the result of communication betwee
 5.  The plug-in triggers the event **AOE After Update**
     
 
-### Saving document as a new file
+## Saving document as a new file
 
 1.  The end-user clicks the button **Save As** (or click menu position **File \\ Save As**)
     
