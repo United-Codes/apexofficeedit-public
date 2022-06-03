@@ -1,6 +1,4 @@
-This section describes first steps with APEX Office Edit from the perspective of Oracle APEX.
-
-# Installation
+# Introduction
 
 The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
