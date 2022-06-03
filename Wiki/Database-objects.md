@@ -1,31 +1,28 @@
-# Database objects
+The table below describes all database objects that are created after installing the sample application or installing the AOE as standalone plug-in in an existing application. 
 
-## All objects
+- column **The plug-in** describes whether object is required for the manual installation
+- column **The sample application** describes whether object is required for the manual installation
 
-The list below describes all parts of the APEX Office Edit explaining which objects are required to implement the plug-in in an Oracle APEX application as a stand-alone plug-in and which are used by the plug-in sample application to showcase the plug-in features.
-
-|     |     |     |     |     |     |
-| --- | --- | --- | --- | --- | --- |
-|     | **Object Name** | **Object Type** | **Required for** |     | **Description** |
-| 1   | **Plug-in** | **Sample App** |
-| 2   | **AOE\_FILES\_DEFAULT** | **Table** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The table is used to store document content when a developer doesn’t provide custom table. |
-| 3   | AOE\_FILES\_DEFAULT\_SEQ | Sequence |
-| 4   | BI\_AOE\_FILES\_DEFAULT | Trigger |
-| 5   | **AOE\_FILES\_CUSTOM** | **Table** | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The table is used by the plug-in sample application in order to showcase the usage of the plug-in attribute **Settings \\ Custom Table**.<br><br>The trigger is using sequence BI\_AOE\_FILES\_DEFAULT. |
-| 6   | BI\_AOE\_FILES\_CUSTOM | Trigger |
-| 7   | **AOE\_REST\_LOGS** | **Table** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The table is used by the plug-in REST service to log information about requests performed by AOE host server to load and update document content. |
-| 8   | AOE\_REST\_LOGS\_SEQ | Sequence |
-| 9   | BI\_AOE\_REST\_LOGS | Trigger |
-| 10  | **AOE\_SAMPLE\_FILE\_VERSIONS** | **Table** | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The table is used by the plug-in sample application in order to showcase the usage of the plug-in callbacks to implement custom document versioning. |
-| 11  | **AOE\_FILES\_UPLOADED** | **Table** | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The table us ised by the plug-in sample application to allow uploading end-users documents. |
-| 12  | AOE\_FILES\_UPLOADED\_SEQ | Sequence |
-| 13  | BI\_AOE\_FILES\_UPLOADED | Trigger |
-| 14  | **PIP\_CRYPTO** | **Package** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The package is used by the plug-in to secure the plug-in access token. |
-| 15  | **UC\_UTF7** | **Package** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The package is used by the plug-in to decode documents filenames from UTF7 to UTF8. |
-| 16  | **UC\_PLUGIN\_UTIL** | **Package** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The package is used by the plug-in to evaluate APEX regions read-only state. |
-| 17  | **AOE\_REST** | **Package** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The package is used by the plug-in RESTful Service handlers to handle requests performed by the AOE host server. |
-| 18  | **AOE\_PLUGIN** | **Package** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The plug-in package implementing region-type plug-in for Oracle APEX application. |
-| 19  | **AOE\_SAMPLE\_APP\_UTIL** | **Package** | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The package is used by the plug-in sample application to handle sample application page processes and implement custom callbacks. |
-| 20  | **RESTful Service** | **RESTful Service** | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The RESTful Service is used to handle all AOE host server requests to load, create and update documents. |
-| 21  | **aop\_api21\_pkg** | **Package** | ![(error)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/error.png) | ![(tick)](https://united-codes.atlassian.net/wiki/s/1607903193/6452/cc22dcd50a41cdc02a85aec87a200df397e2c555/_/images/icons/emoticons/check.png) | The APEX Office Print package is used by the plug-in sample application to showcase the integration of AOP and AOE. |
-| 22  | **aop\_api\_pkg** | **Synonym** |
+| Object Name                  | Object Type        | The plug-in | The sample application | Description                                                  |
+| :--------------------------- | :----------------- | :---------: | :--------------------: | :----------------------------------------------------------- |
+| **RESTful  Service**         | **Install script** |   **Yes**   |        **Yes**         | **The RESTful Service is used to handle all AOE host server requests to load,  create and update documents.** |
+| **AOE_FILES_DEFAULT**        | **Table**          |     Yes     |          Yes           | **The table is used to store document content when a developer doesn’t provide custom table.** |
+| AOE_FILES_DEFAULT_SEQ        | Sequence           |     Yes     |          Yes           |                                                              |
+| BI_AOE_FILES_DEFAULT         | Trigger            |     Yes     |          Yes           |                                                              |
+| **AOE_FILES_CUSTOM**         | **Table**          |     No      |          Yes           | **The table is used by the plug-in sample application in order to showcase the  usage of the plug-in attribute Settings \ Custom Table.** |
+| BI_AOE_FILES_CUSTOM          | Trigger            |     No      |          Yes           | The trigger is  using sequence BI_AOE_FILES_DEFAULT.         |
+| **AOE_REST_LOGS**            | **Table**          |     Yes     |          Yes           | The table is used by the plug-in REST service to log information about  requests performed by AOE host server to load and update document content. |
+| AOE_REST_LOGS_SEQ            | Sequence           |     Yes     |          Yes           |                                                              |
+| BI_AOE_REST_LOGS             | Trigger            |     Yes     |          Yes           |                                                              |
+| **AOE_SAMPLE_FILE_VERSIONS** | **Table**          |     No      |          Yes           | **The table is used by the plug-in sample application in order to showcase the  usage of the plug-in callbacks to implement custom document versioning.** |
+| **AOE_FILES_UPLOADED**       | **Table**          |     No      |          Yes           | **The table is used by the plug-in sample application to allow uploading  end-users documents.** |
+| AOE_FILES_UPLOADED_SEQ       | Sequence           |             |          Yes           |                                                              |
+| BI_AOE_FILES_UPLOADED        | Trigger            |             |          Yes           |                                                              |
+| **PIP_CRYPTO**               | **Package**        |   **Yes**   |        **Yes**         | **The package is used by the plug-in to secure the plug-in access token.** |
+| **UC_UTF7**                  | **Package**        |   **Yes**   |        **Yes**         | **The package is used by the plug-in to decode documents filenames from UTF7 to  UTF8.** |
+| **UC_PLUGIN_UTIL**           | **Package**        |   **Yes**   |        **Yes**         | **The package is used by the plug-in to evaluate APEX regions read-only state.** |
+| **AOE_REST**                 | **Package**        |   **Yes**   |        **Yes**         | **The package is used by the plug-in RESTful Service handlers to handle  requests performed by the AOE host server.** |
+| **AOE_PLUGIN**               | **Package**        |   **Yes**   |        **Yes**         | **The plug-in package implementing region-type plug-in for Oracle APEX  application.** |
+| **AOE_SAMPLE_APP_UTIL**      | **Package**        |   **No**    |        **Yes**         | **The package is used by the plug-in sample application to handle sample  application page processes and implement custom callbacks.** |
+| **AOP_API21_PKG**            | **Package**        |   **Yes**   |        **Yes**         | **The APEX Office Print package is used by the plug-in sample application to  showcase the integration of AOP and AOE.** |
+| AOP_API_PKG                  | Synonym            |     Yes     |          Yes           |                                                              |
