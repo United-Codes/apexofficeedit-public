@@ -255,23 +255,27 @@ The instructions presented below are meant to be the continuation of **Creating 
 5. Select column **CONTENT** in **All files \ Columns tree**
 6. Set **Identification \ Type** to **Hidden Column**
 
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_1.png?raw=true)
+
 ### Define link on column FILENAME
 
 1. Select column **FILENAME in All files \ Columns tree**
-
 2. Set **Identification \ Type** to **Link**
 
-3. Click button **No Link Defined** in **Link \ Target**
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_2.png?raw=true)
 
-4. Set **Target \ Type** to **URL**
+1. Click button **No Link Defined** in **Link \ Target**
 
-5. Set **URL** to javascript: 
+2. Set **Target \ Type** to **URL**
+
+3. Set **URL** to javascript: 
 
    `1javascript: apex.event.trigger(document, 'loaddocument', #ID#);`
 
-6. Click button **OK**
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_3.png?raw=true)
 
-7. Go to the next step to create a dynamic action
+1. Click button **OK**
+2. Go to the next step to create a dynamic action
 
 ### Create dynamic action enforcing loading a file
 
@@ -282,6 +286,8 @@ The instructions presented below are meant to be the continuation of **Creating 
 5. Set **When \ Selection Type** to **JavaScript Expression**
 6. Set **When \ JavaScript Expression** to **document**
 
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_4.png?raw=true)
+
 ### Define true actions
 
 1. Select default **Show** action
@@ -290,19 +296,21 @@ The instructions presented below are meant to be the continuation of **Creating 
 4. Set **Settings \ JavaScript Expression** to **this.data**
 5. Set **Affected Elements \ Item(s)** to **P4_DOCUMENT_ID**
 6. Set **Execution Options \ Fire on Initialization** to **No**
-7. Create a new true action
-8. Set **Identification \ Action** to **Refresh**
-9. Set **Affected Elements \ Selection Type** to **Region**
-10. Set **Affected Elements \ Region** to **APEX Office Edit on default table**
-11. Move region All files above region APEX Office Edit on default table
-12. Save and run the page
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_5.png?raw=true)
+
+1. Create a new true action
+2. Set **Identification \ Action** to **Refresh**
+3. Set **Affected Elements \ Selection Type** to **Region**
+4. Set **Affected Elements \ Region** to **APEX Office Edit on default table**
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_6.png?raw=true)
+
+1. Move region All files above region APEX Office Edit on default table
+2. Save and run the page
 
 Region column filename contains links. Clicking on link will force APEX Office Edit to load selected document by setting primary key item and refreshing region implementing the plug-in.
 
-***
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_7.png?raw=true)
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-| 1   | **Create classic report showing all created files**<br><br>1.  Create a new page region<br>    <br>2.  Set **Identification \\ Title** to **All files**<br>    <br>3.  Set **Indentification \\ Type** to **Classic Report**<br>    <br>4.  Set **Source \\ Table Name** to **AOE\_FILES\_DEFAULT**<br>    <br>5.  Select column **CONTENT** in **All files \\ Columns tree**<br>    <br>6.  Set **Identification \\ Type** to **Hidden Column**<br>    <br><br>**Define link on column FILENAME**<br><br>1.  Select column **FILENAME in All files \\ Columns tree**<br>    <br>2.  Set **Identification \\ Type** to **Link**<br>    <br>3.  Click button **No Link Defined** in **Link \\ Target**<br>    <br>4.  Set **Target \\ Type** to **URL**<br>    <br>5.  Set **URL** to javascript:<br>    <br>    ```<br>    javascript: apex.event.trigger(document, 'loaddocument', #ID#);<br>    ```<br>    <br>6.  Click button **OK**<br>    <br>7.  Go to the next step to create a dynamic action | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-130800.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-131152.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-132936.png?api=v2) |
-| 2   | **Create dynamic action enforcing loading a file**<br><br>1.  Create a new dynamic action<br>    <br>2.  Set **Identification \\ Name** to **Load document**<br>    <br>3.  Set **When \\ Event** to **Custom**<br>    <br>4.  Set **When \\ Custom Event** to **loaddocument**<br>    <br>5.  Set **When \\ Selection Type** to **JavaScript Expression**<br>    <br>6.  Set **When \\ JavaScript Expression** to **document**<br>    <br><br>**Define true actions**<br><br>1.  Select default **Show** action<br>    <br>2.  Set **Identification \\ Action** to **Set Value**<br>    <br>3.  Set **Settings \\ Set Type** to **JavaScript Expression**<br>    <br>4.  Set **Settings \\ JavaScript Expression** to **this.data**<br>    <br>5.  Set **Affected Elements \\ Item(s)** to **P4\_DOCUMENT\_ID**<br>    <br>6.  Set **Execution Options \\ Fire on Initialization** to **No**<br>    <br>7.  Create a new true action<br>    <br>8.  Set **Identification \\ Action** to **Refresh**<br>    <br>9.  Set **Affected Elements \\ Selection Type** to **Region**<br>    <br>10.  Set **Affected Elements \\ Region** to **APEX Office Edit on default table**<br>    <br>11.  Move region All files above region APEX Office Edit on default table<br>    <br>12.  Save and run the page<br>    <br><br>Region column filename contains links. Clicking on link will force APEX Office Edit to load selected document by setting primary key item and refreshing region implementing the plug-in. | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-132125.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-132548.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-133122.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-133733.png?api=v2) |
+***
