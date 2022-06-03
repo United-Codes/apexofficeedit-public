@@ -31,33 +31,85 @@ The plug-in implementing APEX Office Edit can be installed in two scenarios:
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_3.png?raw=true)
 
+### Install sample application
+
 After successful uploading the application installation file, the APEX shows confirmation step.
 
-10. Click the button “Next”
-10. Configure or use default values in the form
-12. Click the button “Install Application”
+1. Click the button “Next”
+2. Configure or use default values in the form
+3. Click the button “Install Application”
+4. 
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_4.png?raw=true)
 
+4. Don’t close the page
+5. Wait until APEX finishes installing the application. When installing the application you will be redirected to the next step.
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_5.png?raw=true)
 
 
-|     |     |     |
-| --- | --- | --- |
-|     | **Step** | **Example step screenshot** |
-| 1   | **Importing sample application** |     |
-| 5   | **Install Database Application**<br><br>1.  Configure or use default values in the form<br>    <br>2.  Click the button “Install Application” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142234.png?api=v2) |
-| 6   | **Installing the application**<br><br>1.  Don’t close the page<br>    <br>2.  Wait until APEX finishes installing the application. When installing the application you will be redirected to the next step. | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142248.png?api=v2) |
-| 7   | **Install supporting objects**<br><br>In order to run the sample application, all sample application supporting objects must be installed.<br><br>1.  Make sure switch “Install Supporting Objects” is checked<br>    <br>2.  Click the button “Next” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142303.png?api=v2) |
-| 8   | **Confirm installing supporting objects**<br><br>1.  Click the button “Install” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142321.png?api=v2) |
-| 9   | **Installing supporting objects**<br><br>1.  Don’t close the page<br>    <br>2.  Wait until APEX finishes installing supporting objects. When installing supporting objects you will be redirected to the next step. | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142332.png?api=v2) |
-| 10  | **Installing supporting objects**<br><br>When installation is finished (the sample application and supporting objects are installed), the confirmation screen is displayed.<br><br>If any error occurred while installing the sample application you will be prompted about errors and you can verify supporting objects installation by clicking the button “Install Summary”. | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142340.png?api=v2) |
-| 11  | **Verifying installation summary**<br><br>In this screen you can see all errors. If no errors are raised the sample application is successfully installed and the last step is to update the REST URL in freshly installed application.<br><br>1.  Click the link “Edit Application” in right sidebar summary | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142424.png?api=v2) |
-| 12  | **Configuring the plug-in component settings for REST service** |     |
-| 13  | 1.  Go to application Shared Components<br>    <br>2.  Go to Other Components \\ Plug-ins<br>    <br>3.  Select region plug-in UC - APEX Office Edit (AOE)<br>    <br>4.  Read help texts for attributes “Server-Side URL(Value Required)” and “URL to RESTful service module(Value Required)“<br>    <br>5.  Proceed to the next step in this instruction | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142518.png?api=v2) |
-| 14  | 1.  From the top bar menu select SQL Workshops \\ RESTful services<br>    <br>2.  Select module APEX Office Edit<br>    <br>3.  Copy value of an “Full URL” module attribute<br>    <br>4.  Go back to the plug-in component settings from this instruction previous step | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142549.png?api=v2) |
-| 15  | 1.  Replace the default value “[http://www.apexrnd.be/ords181/aoe/aoe/files/”](#) with the “Full URL” copied in this instructions previous step (preserve the suffix “files/”)<br>    <br>2.  Click the button “Apply Changes” | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142643.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142702.png?api=v2) |
-| 16  | **Testing the sample application** |     |
-| 17  | **Test the sample application**<br><br>1.  Run the sample application<br>    <br>2.  Click on document icon you wish to create<br>    <br>3.  If configuring the plug-in component settings was done right, a new document should be created and opened in the plug-in editor | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142736.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220509-142819.png?api=v2) |
+
+In order to run the sample application, all sample application supporting objects must be installed
+
+In order to run the sample application, all sample application supporting objects must be installed.
+
+6. Make sure switch “Install Supporting Objects” is checked
+2. Click the button “Next”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_6.png?raw=true)
+
+8. Click the button “Install”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_7.png?raw=true)
+
+1. Don’t close the page
+2. Wait until APEX finishes installing supporting objects. When installing supporting objects you will be redirected to the next step.
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_8.png?raw=true)
+
+When installation is finished (the sample application and supporting objects are installed), the confirmation screen is displayed.
+
+If any error occurred while installing the sample application you will be prompted about errors and you can verify supporting objects installation by clicking the button “Install Summary”.
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_9.png?raw=true)
+
+In this screen you can see all errors. If no errors are raised the sample application is successfully installed and the last step is to update the REST URL in freshly installed application.<br>
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_10.png?raw=true)
+
+### The plug-in configuration
+
+1. Go to application Shared Components
+2. Go to Other Components \\ Plug-ins
+3. Select region plug-in UC - APEX Office Edit (AOE)
+4. Read help texts for attributes “Server-Side URL(Value Required)” and “URL to RESTful service module(Value Required)“
+5. Proceed to the next step in this instruction
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_1.png?raw=true)
+
+1. From the top bar menu select SQL Workshops \ RESTful services
+2. Select module APEX Office Edit
+3. Copy value of an “Full URL” module attribute
+4. Go back to the plug-in component settings from this instruction previous step
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_2.png?raw=true)
+
+1. Replace the default value “[http://www.apexrnd.be/ords181/aoe/aoe/files/”](https://united-codes.atlassian.net/wiki/spaces/UCAOE/pages/1966374926/Getting+started#) with the “Full URL” copied in this instructions previous step (preserve the suffix “files/”)
+2. Click the button “Apply Changes”
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_3.png?raw=true)
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_4.png?raw=true)
+
+### Testing the sample application
+
+1. Run the sample application
+2. Click on document icon you wish to create
+3. If configuring the plug-in component settings was done right, a new document should be created and opened in the plug-in editor
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_test_1.png?raw=true)
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_test_2.png?raw=true)
 
 ## Manual installation
 
