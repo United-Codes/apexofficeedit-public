@@ -193,18 +193,50 @@ This section describes first steps how to create the plug-in instance implementi
 
 ## Default table
 
+### Create a new page
+
 1. Create a new empty page
 
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_1.png?raw=true)
 
 
-|     |     |     |
-| --- | --- | --- |
-|     |     |     |
-| 1   | 1.  Create a new empty page | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-124409.png?api=v2) |
-| 2   | Create the plug-in region<br><br>1.  Create a new region<br>    <br>2.  Set **Identification \\ Title** to **APEX Office Edit on default table**<br>    <br>3.  Change **Indentification \\ Type** to **UC - APEX Office Edit (AOE) \[Plug-in\]** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-124605.png?api=v2) |
-| 3   | Create APEX item containing document ID<br><br>1.  Create page item<br>    <br>2.  Set **Identification \\ Name** to **P4\_DOCUMENT\_ID**<br>    <br>3.  Change **Type** to **Hidden**<br>    <br>4.  Set **Settings \\ Value Protected** to **No** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-125058.png?api=v2) |
-| 4   | Configure the plug-in<br><br>1.  Go to region **APEX Office Edit on default table \\ Attributes**<br>    <br>2.  Set **Item Containing Primary Key Value** to **P4\_DOCUMENT\_ID**<br>    <br>3.  Save and run the page | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220513-161642.png?api=v2) |
-| 5   | In the result, the plug-in is prepared to start creating a first document. Clicking on document icon creates a blank document of selected type.<br><br>Continue basic implementation in section **Loading documents into APEX Office Edit** | ![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-125617.png?api=v2)![](https://united-codes.atlassian.net/wiki/download/attachments/1966374926/image-20220510-125814.png?api=v2) |
+
+### Create the plug-in region
+
+1. Create a new region
+2. Set **Identification \ Title** to **APEX Office Edit on default table**
+3. Change **Indentification \ Type** to **UC - APEX Office Edit (AOE) [Plug-in]**
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_2.png?raw=true)
+
+
+
+### Create APEX item containing document ID
+
+1. Create page item 
+2. Set **Identification \ Name** to **P4_DOCUMENT_ID**
+3. Change **Type** to **Hidden**
+4. Set **Settings \ Value Protected** to **No**
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_3.png?raw=true)
+
+### Configure the plug-in 
+
+1. Go to region **APEX Office Edit on default table \ Attributes**
+2. Set **Item Containing Primary Key Value** to **P4_DOCUMENT_ID**
+3. Save and run the page
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_4.png?raw=true)
+
+
+
+### Testing the plug-in
+
+In the result, the plug-in is prepared to start creating a first document. Clicking on document icon creates a blank document of selected type. 
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_5.png?raw=true)
+
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_6.png?raw=true)
 
 # Loading documents into APEX Office Edit
 
@@ -213,6 +245,61 @@ This section describes first steps how to load document into APEX Office Edit. T
 ## Default table
 
 The instructions presented below are meant to be the continuation of **Creating the plug-in instance in an existing application**.
+
+### Create classic report showing all created files
+
+1. Create a new page region
+2. Set **Identification \ Title** to **All files**
+3. Set **Indentification \ Type** to **Classic Report**
+4. Set **Source \ Table Name** to **AOE_FILES_DEFAULT**
+5. Select column **CONTENT** in **All files \ Columns tree**
+6. Set **Identification \ Type** to **Hidden Column**
+
+### Define link on column FILENAME
+
+1. Select column **FILENAME in All files \ Columns tree**
+
+2. Set **Identification \ Type** to **Link**
+
+3. Click button **No Link Defined** in **Link \ Target**
+
+4. Set **Target \ Type** to **URL**
+
+5. Set **URL** to javascript: 
+
+   `1javascript: apex.event.trigger(document, 'loaddocument', #ID#);`
+
+6. Click button **OK**
+
+7. Go to the next step to create a dynamic action
+
+### Create dynamic action enforcing loading a file
+
+1. Create a new dynamic action
+2. Set **Identification \ Name** to **Load document**
+3. Set **When \ Event** to **Custom**
+4. Set **When \ Custom Event** to **loaddocument**
+5. Set **When \ Selection Type** to **JavaScript Expression**
+6. Set **When \ JavaScript Expression** to **document**
+
+### Define true actions
+
+1. Select default **Show** action
+2. Set **Identification \ Action** to **Set Value**
+3. Set **Settings \ Set Type** to **JavaScript Expression**
+4. Set **Settings \ JavaScript Expression** to **this.data**
+5. Set **Affected Elements \ Item(s)** to **P4_DOCUMENT_ID**
+6. Set **Execution Options \ Fire on Initialization** to **No**
+7. Create a new true action
+8. Set **Identification \ Action** to **Refresh**
+9. Set **Affected Elements \ Selection Type** to **Region**
+10. Set **Affected Elements \ Region** to **APEX Office Edit on default table**
+11. Move region All files above region APEX Office Edit on default table
+12. Save and run the page
+
+Region column filename contains links. Clicking on link will force APEX Office Edit to load selected document by setting primary key item and refreshing region implementing the plug-in.
+
+***
 
 |     |     |     |
 | --- | --- | --- |
