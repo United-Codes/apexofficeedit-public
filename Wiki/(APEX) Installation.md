@@ -4,7 +4,7 @@ The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
 *   by installing the AOE sample application 
     
-*   by executing DDL script and the plug-in implementing AOE (manual installation)
+*   by executing the DDL script and installing the region plug-in in an existing application (manual installation)
     
 
 # Sample application
@@ -13,7 +13,7 @@ The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
 1. Log into your application builder
 2. Click on the tile Import tile to start APEX wizard installing application from the application installation file
-3. Make sure the schema in which you want to install sample application is REST enabled
+3. Make sure the schema in which you want to install the sample application is REST enabled
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_1.png?raw=true)
 
@@ -23,7 +23,7 @@ The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_2.png?raw=true)
 
-After successful uploading the application installation file, the APEX shows wizard confirmation step.
+After successfully uploading the application installation file, the APEX shows the wizard confirmation step.
 
 1. Click the button **Next**
 
@@ -40,7 +40,7 @@ After successful uploading the application installation file, the APEX shows wiz
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_5.png?raw=true)
 
-4. Make sure switch “Install Supporting Objects” is checked - <u>in order to install the sample application all sample application supporting objects must be installed successfuly</u>
+4. Make sure switch **Install Supporting Objects** **is checked** - in order to install the sample application all sample application supporting objects must be installed successfully
 5. Click the button **Next**
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_6.png?raw=true)
@@ -49,7 +49,7 @@ After successful uploading the application installation file, the APEX shows wiz
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_7.png?raw=true)
 
-7. Don’t close the page - wait until APEX finishes installing supporting objects. When installing supporting objects you will be redirected to the next step.
+7. Don’t close the page - wait until APEX finishes installing supporting objects. When installing supporting objects you will be redirected to the next step
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_8.png?raw=true)
 
@@ -57,15 +57,15 @@ After successful uploading the application installation file, the APEX shows wiz
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_9.png?raw=true)
 
-9. If installation is terminated by error it can be verified after clicking the button **Install Summary** - summary presents status of installing all supporting objects.  
+9. If the installation is terminated by error it can be verified after clicking the button **Install Summary** - summary presents the status of installing all supporting objects.  
 
-10. When the sample application installation is successful, the last step is to update the plug-in component settings for RESTful service installed by the sample application supporting objects.
+10. When the sample application installation is successful, the last step is to update the plug-in component settings for the RESTful service installed by the sample application supporting objects.
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_10.png?raw=true)
 
 ## Configure the plug-in RESTful service
 
-In order to finish the sample application installation it is required to configure the plug-in RESTful service
+In order to finish the sample application installation, it is required to configure the plug-in RESTful service
 
 1. Fill in the instructions described in **The plug-in REST service configuration**
 2. Test the sample application
@@ -131,20 +131,20 @@ In order to finish the sample application installation it is required to configu
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_plug_4.png?raw=true)
 
-After successful installation you need to update the plug-in component settings. Go to the next step **The plug-in REST service configuration**.
+After successful installation, the plug-in component settings must be updated. Go to the next step **The plug-in REST service configuration**.
 
-In order to create first APEX Office instance please follow instruction **Creating the plug-in instance in an existing application**
+In order to create the first AOE instance please follow instructions **Creating the plug-in instance in an existing application**
 
 ## Configure the plug-in RESTful service
 
-In order to finish the sample application installation it is required to configure the plug-in RESTful service
+In order to finish the sample application installation, it is required to configure the plug-in RESTful service:
 
 1. Fill in the instructions described in **The plug-in REST service configuration**
 2. Test the sample application
 
 ## Implement the plug-in in an existing application
 
-In order to create first instance of the AOE please go to instruction described in section **Getting started \ Creating the plug-in instance in an existing application**
+In order to create the first instance of the AOE please go to the instructions described in section **Getting started \ Creating the plug-in instance in an existing application**.
 
 # The plug-in REST service configuration
 
@@ -170,8 +170,3 @@ In order to create first instance of the AOE please go to instruction described 
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_4.png?raw=true)
 
-
-
-
-
-***

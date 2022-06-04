@@ -14,7 +14,7 @@ By the default, the plug-in uses default table **AOE\_FILES\_DEFAULT** to store 
 
 # Flows
 
-Creating, loading, and updating documents are the result of communication between the AOE host server and the plug-in through the plug-in Oracle REST service handlers. If the process is interrupted by PL/SQL error raised by the RESTful Service handler, the plug-in shows a user-friendly error to the end-user described in [RESTful service \ Error Handling](https://github.com/United-Codes/apexofficeedit-public/wiki/RESTful-service#error-handling).
+Creating, loading, and updating documents are the result of communication between the AOE host server and the plug-in through the plug-in Oracle REST service handlers. If the process is interrupted by PL/SQL error raised by the RESTful Service handler, the plug-in shows a user-friendly error to the end-user described in **RESTful service \ Error Handling**.
 
 **The flows described below are illustrative and should be considered as-is.**
 
@@ -136,4 +136,3 @@ Creating, loading, and updating documents are the result of communication betwee
 5.  AOE host server reloads a document and sends postMessage indicating that the document was reloaded
     
 6.  The plug-in triggers the event **AOE After Save As** with property reloaded set to **true**
-    

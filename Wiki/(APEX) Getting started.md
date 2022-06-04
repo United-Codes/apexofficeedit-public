@@ -1,6 +1,6 @@
 # Creating the plug-in instance in an existing application
 
-This section describes first steps how to create the plug-in instance implementing APEX Office Edit. If any plug-in attribute purpose is not clear please read help texts defined for each attribute.
+This section describes the first steps of how to create the plug-in instance implementing APEX Office Edit. If any plug-in attribute purpose is not clear, please read the help texts defined for Oracle APEX page designer.
 
 ## Default table
 
@@ -53,7 +53,7 @@ In the result, the plug-in is prepared to start creating a first document. Click
 
 # Loading documents into APEX Office Edit
 
-This section describes first steps how to load document into APEX Office Edit. The plug-in state is based on APEX Session State for page items defined as primary key(s). If the given item(s) is/are NULL the plug-in shows panel allowing the end-user to create a new document. In order to load document to the APEX Office Edit, item(s) must not be NULL, and the plug-in configuration must be valid.
+This section describes the first steps of how to load documents into APEX Office Edit. The plug-in state is based on `APEX Session State` for page items defined as primary key(s). If the given item(s) is/are NULL the plug-in shows a panel allowing the end-user to create a new document. In order to load a document to the AOE, item(s) must not be NULL, and the plug-in configuration must be valid.
 
 ## Default table
 
@@ -122,7 +122,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 1. Move region All files above region APEX Office Edit on default table
 2. Save and run the page
 
-Region column filename contains links. Clicking on link will force APEX Office Edit to load selected document by setting primary key item and refreshing region implementing the plug-in.
+Region column filename contains links. Clicking on a link will force APEX Office Edit to load the selected document by setting the primary key item and refreshing the region implementing the plug-in.
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_7.png?raw=true)
 

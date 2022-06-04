@@ -25,7 +25,7 @@ All attributes available as **Component Settings** are listed and described belo
 | :--- | :------- | :----------- |
 | Text | Yes      | None         |
 
-Specify the URL under which the plug-in server-side files can be accessed. For example the URL `https://www.exmaple-domian.com` will be used to reference server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
+Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `[https://www.exmaple-domian.com](https://www.exmaple-domian.com/)` will be used to reference the server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
 
 ### URL to RESTful service module
 
@@ -33,7 +33,9 @@ Specify the URL under which the plug-in server-side files can be accessed. For e
 | :--- | :------- | :----------- |
 | Text | Yes      | None         |
 
-URL to **ORDS RESTful service module** handling the plugin operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL can be copied from **SQL Workshop \ RESTful Services \ Module Definition**.<br><br>The plug-in is delivered with the default ORDS RESTful service module named **APEX OFFice Edit**. When using the plug-in ORDS RESTful service, the URL must include suffix `files/`, for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
+URL to **ORDS RESTful service module** handling the plugin operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**.
+
+The plug-in is delivered with the default ORDS RESTful service module named **APEX OFFice Edit**. The URL must include the suffix `files/`, for example, `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
 ### Default Document Filename
 
@@ -45,7 +47,7 @@ The default name of a file when a new document is created.
 
 ## Component
 
-All attributes available in **Page Designer** are listed and described below.
+All the plug-in region attributes available in the Oracle APEX page designer are listed and described below.
 
 ### Allowed File Types
 
@@ -76,9 +78,9 @@ Available options:
 
 | Option                      | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------- |
-| Override Component Settings | When selected, components settings **Form action** and **REST URL** can be overriden on the region level |
-| Use Custom Table            | When selected, a custom table storing a document can be defined on the region level. Otherwise **AOE\_FILES\_DEFAULT** table is used. Learn more in DB Objects. |
-| Disable printing            | When selected, the end-user can't print the document using browser print functionality - the editor print button is not displayed. Printing is only possible when an APEX application implementing the plug-in, and the plug-in server-side files are accessible within the same domain. Otherwise, printing is not possible - clicking the print button raises a cross-origin JavaScript error. |
+| Override Component Settings | When selected, components settings **Form action** and **REST URL** can be overridden on the region level. |
+| Use Custom Table            | When selected, a custom table storing a document can be defined on the region level. Otherwise **AOE\_FILES\_DEFAULT** table is used. Learn more in **Database Objects**. |
+| Disable printing            | When selected, the end-user can't print the document using browser print functionality - the editor print button is not displayed. Printing is only possible when an APEX application is accessible under the same origin as the plug-in server-side files. Otherwise, printing is not possible - clicking the print button raises a cross-origin JavaScript error. |
 
 ### Server-Side URL
 
@@ -86,7 +88,7 @@ Available options:
 | :--- | :------- | :---------------------------------------------------- |
 | Text | Yes      | Settings \ Override Component Settings **is checked** |
 
-Specify the URL under which the plug-in server-side files can be accessed. For example the URL `https://www.exmaple-domian.com` will be used to reference server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
+Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `[https://www.exmaple-domian.com](https://www.exmaple-domian.com/)` will be used to reference the server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
 
 ### URL to RESTful service module
 
@@ -94,9 +96,9 @@ Specify the URL under which the plug-in server-side files can be accessed. For e
 | :--- | :------- | :---------------------------------------------------- |
 | Text | Yes      | Settings \ Override Component Settings **is checked** |
 
-URL to **ORDS RESTful service module** handling the plugin operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL can be copied from **SQL Workshop \ RESTful Services \ Module Definition**. 
+URL to **ORDS RESTful service module** handling the plug-in operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. 
 
-The plug-in is delivered with the default ORDS RESTful service module named **APEX OFFice Edit**. When using the plug-in ORDS RESTful service, the URL must include suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
+The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**. The URL must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
 ### Item(s) Containing Primary Key(s) Value(s)
 
@@ -108,11 +110,11 @@ A given APEX page item(s) is (are) used to identify a document to be loaded from
 
 **When use custom table is checked**
 
-Enter the page item containing the document primary key. When an item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
+Enter the page item containing the document's primary key. When an item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
 
 **When use custom table is not checked**
 
-Enter comma-delimited page items containing primary keys values of a document to be loaded. When any APEX item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
+Enter comma-delimited page items containing the primary key(s) value(s) of a document to be loaded. When any APEX item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
 
 ### Menu layout
 
@@ -124,8 +126,8 @@ Select the layout of the editor menu to be used, available options are the follo
 
 | Option       | Description                                                  |
 | :----------- | :----------------------------------------------------------- |
-| Classic      | Old-fashioned drop-down menu layout is used to render the editor menu. Hiding menu entries is **possible**. The menu customization can be done using the plug-in attribute **JavaScript Initialization Code**. See help text for the attribute to learn more. |
-| Notebook Bar | Menu layout is modern and user-friendly, menu entries are using icons. Hiding menu entries is **not possible**. |
+| Classic      | An old-fashioned drop-down menu layout is used to render the editor menu. Hiding menu entries is **possible**. The menu customization can be done using the plug-in attribute **JavaScript Initialization Code**. See the help text for the attribute **JavaScript Initialization Code** to learn more. |
+| Notebook Bar | The menu layout is organized as tabs and is user-friendly - menu entries are using icons. Hiding menu entries is **not possible**. |
 
 ### Document Permissions
 
@@ -136,8 +138,8 @@ Select the layout of the editor menu to be used, available options are the follo
 Available options:
 
 * Everyone can read and edit
-* Only author can read and edit
-* Everyone can read but author can edit
+* Only the author can read and edit
+* Everyone can read but the author can edit
 * Custom function returning document permissions - when selected, the PL/SQL function is used to return document permission. See the attribute **Function Returning Document Permissions** for more details.
 
 ### Function Returning Document Permissions
@@ -150,7 +152,7 @@ Specify PL/SQL function name returning document permission for the end-user and 
 
 * accessible in the context of the given ORDS RESTful service module
 * accepting defined arguments
-* returning `VARCHAR2` string containing document persmissions to **read**, **update**, **save as a new file** and **print** a document
+* returning `VARCHAR2` string containing document permissions to **read**, **update**, **save as a new file** and **print** a document
 
 The function specification is the following:
 
@@ -169,12 +171,12 @@ function function_name(
 | p\_application\_id | NUMBER   | An application ID in which the plug-in is run                |
 | p\_page\_id        | NUMBER   | An application page ID in which the plug-in is run           |
 | p\_session\_id     | NUMBER   | An application session ID in which the plug-in is currently run |
-| p\_file\_id        | VARCHAR2 | A document ID. When the plug-in uses a custom table and multiple primary keys, the value contains comma separated primary keys values |
+| p\_file\_id        | VARCHAR2 | A document ID. When the plug-in uses a custom table and multiple primary keys, the value contains comma-separated primary keys values |
 | p\_user\_id        | VARCHAR2 | An APEX application end-user username                        |
 
 **Document permissions pattern**
 
-The returned value from the function must be following pattern `X:Y:Z:P` where
+The returned value from the function must be following the pattern `X:Y:Z:P` where
 
 *   **X** is permission to **read document**,
 
@@ -196,7 +198,7 @@ Allowed values are **0** and **1**, where
 | :--- | :------- | :----------- |
 | Text | No       | None         |
 
-Enter PL/SQL procedure name to be executed after a document content is successfuly read and loaded by the plug-in RESTful service module. The given procedure must be:
+Enter the PL/SQL procedure name to be executed after a document content is successfully read and loaded by the plug-in RESTful service module. The given procedure must be:
 
 * accessible in the context of the given ORDS RESTful service module
 * accepting defined arguments
@@ -224,7 +226,7 @@ procedure procedure_name(
 | p\_application\_id          | NUMBER    | An application ID in which the plug-in is run                |
 | p\_page\_id                 | NUMBER    | An application page ID in which the plug-in is run           |
 | p\_session\_id              | NUMBER    | An application session ID in which the plug-in is currently run |
-| p\_file\_id                 | VARCHAR2  | A document ID. When the plug-in uses a multiple primary keys (a custom table must be used), the value contains comma separated primary keys values |
+| p\_file\_id                 | VARCHAR2  | A document ID. When the plug-in uses multiple primary keys (a custom table must be used), the value contains comma-separated primary keys values |
 | p\_user\_id                 | VARCHAR2  | An APEX application end-user username                        |
 | p\_file\_content            | BLOB      | A document file content                                      |
 | p\_file\_filename           | VARCHAR2  | A document filename                                          |
@@ -239,7 +241,7 @@ procedure procedure_name(
 | :--- | :------- | :----------- |
 | Text | No       | None         |
 
-Enter PL/SQL procedure name to be executed after a new document is inserted into the default or custom table. The given procedure must be:
+Enter the PL/SQL procedure name to be executed after a new document is inserted into the default or custom table. The given procedure must be:
 
 * accessible in the context of the given ORDS RESTful service module
 * accepting defined arguments
@@ -267,7 +269,7 @@ procedure procedure_name(
 | p\_application\_id          | NUMBER    | An application ID in which the plug-in is run                |
 | p\_page\_id                 | NUMBER    | An application page ID in which the plug-in is run           |
 | p\_session\_id              | NUMBER    | An application session ID in which the plug-in is currently run |
-| p\_file\_id                 | VARCHAR2  | A document ID. When the plug-in uses a multiple primary keys (a custom table must be used), the value contains comma separated primary keys values |
+| p\_file\_id                 | VARCHAR2  | A document ID. When the plug-in uses multiple primary keys (a custom table must be used), the value contains comma-separated primary keys values |
 | p\_user\_id                 | VARCHAR2  | An APEX application end-user username                        |
 | p\_file\_content            | BLOB      | A document file content                                      |
 | p\_file\_filename           | VARCHAR2  | A document filename                                          |
@@ -305,9 +307,9 @@ procedure procedure_name(
 | p\_application\_id | NUMBER   | An application ID in which the plug-in is implemented        |
 | p\_page\_id        | NUMBER   | An application page ID in which the plug-in is implemented   |
 | p\_session\_id     | NUMBER   | An application session ID in which the end-user uses the plug-in |
-| p\_file\_id\_old   | VARCHAR2 | **When a document is updated**  <br />the primary key(s) value(s) of an updated document.<br /><br />**When a document is saved as a new file**<br />the primary key(s) value(s) of a document before the end-user requested saving document as a new file with a new filename. If the plug-in uses multiple columns to identify a document, then primary keys values are delimited by a colon. |
-| p\_file\_id\_new   | VARCHAR2 | **When a document is updated**  <br>always NULL<br>    <br>**When a document is saved as a new file**  <br>The primary key(s) value(s) of a new document saved with a new filename. If the plug-in uses multiple columns to identify a document, then primary keys values are delimited by a colon. |
-| p\_user\_id        | VARCHAR2 | The end-user username used to authenticate in APEX session   |
+| p\_file\_id\_old   | VARCHAR2 | **When a document is updated**  <br />the primary key(s) value(s) of an updated document.<br /><br />**When a document is saved as a new file**<br />the primary key(s) value(s) of a document before the end-user requested saving document as a new file with a new filename. If the plug-in uses multiple columns to identify a document, then primary key values are delimited by a colon. |
+| p\_file\_id\_new   | VARCHAR2 | **When a document is updated**  <br>always NULL<br>    <br>**When a document is saved as a new file**  <br>The primary key(s) value(s) of a new document saved with a new filename. If the plug-in uses multiple columns to identify a document, then primary key(s) value(s) are delimited by a colon. |
+| p\_user\_id        | VARCHAR2 | The end-user username used to authenticate in the APEX session   |
 
 ### Function Returning a New Primary Key(s)
 
@@ -315,14 +317,14 @@ procedure procedure_name(
 | :--- | :------- | :----------------------------------------- |
 | Text | No       | Settings \ Use Custom Table **is checked** |
 
-Specify PL/SQL function name returning a new primary key(s) value(s) used in the insert statement of a new document. Primary keys values must be returned and comma-delimited in the same order as given columns in the attribute **Document Primary Key(s) Column(s)**.
+Specify PL/SQL function name returning a new primary key(s) value(s) used in the insert statement of a new document. Primary key(s) value(s) must be returned and comma-delimited in the same order as given columns in the attribute **Document Primary Key(s) Column(s)**.
 
 When a function is specified, the primary key(s) column(s) and returned value(s) are included in the insert statement of a new document. Otherwise, the primary key(s) column(s) are not included - value(s) should be handled by the table trigger.
 
 The given function must be:
 
 * accessible in the context of the given ORDS RESTful service module
-* accepting defined argument
+* accepting the defined argument
 * returning `VARCHAR2` string containing a new document primary key(s) value(s) delimited with comma
 
 The function specification is the following:
@@ -393,7 +395,7 @@ TYPE t_wopi_access_token IS RECORD (
 );
 ```
 
-The plug-in access token properties are described as in the table below.
+The plug-in access token properties are described in the table below.
 
 | **Property**                | **Type**       | **Description**                                              |
 | :-------------------------- | :------------- | :----------------------------------------------------------- |
@@ -431,7 +433,7 @@ The plug-in access token properties are described as in the table below.
 | ---- | -------- | ------------------------------------------ |
 | Text | Yes      | Settings \ Use Custom Table **is checked** |
 
-A custom table name in which a document content is stored. A custom table must have (at least) following types of columns:
+A custom table name in which a document content is stored. A custom table must have (at least) the following types of columns:
 
 | Description                                                  | Type         |
 | :----------------------------------------------------------- | :----------- |
@@ -452,7 +454,7 @@ A custom table can use multiple primary keys to identify a document. Comma-delim
 | :--- | :------- | :----------------------------------------- |
 | Text | Yes      | Settings \ Use Custom Table **is checked** |
 
-Comma-delimited columns names used as primary keys for a document.
+Comma-delimited column names used as primary keys for a document.
 
 ### Document File Content Column
 
@@ -506,7 +508,7 @@ A column name which type is `VARCHAR2` and is meant to store a document's owner 
 
 ## Has "Initialization JavaScript Code" Attribute
 
-The attribute value must be anonymous function accepting only one parameter which is JSON object containing all plug-in options rendered from the plug-in package on page load. The function must return this JSON object in order to initialize the plug-in. Specified object properties can be used to customize the plug-in UI and logging in the application debug mode enabled.
+The attribute value must be an anonymous function accepting only one parameter which is a JSON object containing all plug-in options rendered from the plug-in package on page load. The function must return this JSON object to initialize the plug-in. Specified object properties can be used to customize the plug-in UI and logging in the application debug mode enabled.
 
 ```javascript
 function( pOptions ) {
@@ -527,16 +529,16 @@ The parameters which can be safely customized are described below:
 
 ### **buttons** `Array`
 
-An `Array` of JSON objects defining custom button to be added to the AOE toolbar. Clicked button triggers **AOE Button Clicked** event. The possibility to add custom buttons is experimental and might be removed or updated. 
+An `Array` of JSON objects defining a custom button to be added to the AOE toolbar. Clicked button triggers **AOE Button Clicked** event. The possibility to add custom buttons is experimental and might be removed or updated. 
 
-A custom button JSON must implement following propaties:
+A custom button JSON must implement the following properties:
 
 | Property     | Type   | Description                                                  |
 | :----------- | :----- | :----------------------------------------------------------- |
-| id           | String | An unique button ID used to identify clicked custom button when the plug-in event **AOE Button Clicked** is triggered. |
+| id           | String | An unique button ID is used to identify clicked custom button when the plug-in event **AOE Button Clicked** is triggered. |
 | imgurl       | String | An URL to the button SVG icon. _To reference **APEX Office Print** icon use_ `#PLUGIN_PREFIX#aop.svg`. |
-| label        | String | A text to be displayed when custom button is hovered.        |
-| insertBefore | String | An existing button ID before which a custom button is added. For example: `save`, `print`. Placing custom button before existing button is supported only when **Menu Layout** is set to **Classic**. Otherwise, custom button is added in the toolbar before menu entries. |
+| label        | String | A text to be displayed when the custom button is hovered.        |
+| insertBefore | String | An existing button ID before which a custom button is added. For example: `save`, `print`. Placing a custom button before the existing button is supported only when **Menu Layout** is set to **Classic**. Otherwise, the custom button is added in the toolbar before menu entries. |
 
 An example implementation might look like the following code:
 
@@ -585,11 +587,11 @@ Flag determining whether the document editor shows ruler.
 
 ### **logPrefixAsStaticId** `Boolean`
 
-Flag detemining whether the plug-in widget produce JavaScript logs (in application debug mode) using region static ID as the prefix or is using the default prefix. Enabling this property is helpful when debugging multiple instances of the plug-in on same page.
+Flag determining whether the plug-in widget produces JavaScript logs (in application debug mode) using region static ID as the prefix or is using the default prefix. Enabling this property is helpful when debugging multiple instances of the plug-in on the same page.
 
 ### **height** `Number`
 
-The document editor default height in `pixels`.
+The document editor's default height in `pixels`.
 
 ### **zoomLevel** `Number`
 
@@ -651,9 +653,9 @@ The event `ucaoeafteractionsaveas` is triggered when the plug-in REST handler fi
 | :--------------------- | :------- | :----------------------------------------------------------- |
 | this.data.**success**  | Boolean  | Boolean flag indicating if saving a document as a new file was successful |
 | this.data.**msg**      | JSON     | JSON object containing postMessage `UC_Message` triggering the event |
-| this.data.**reloaded** | Boolean  | Boolean flad indicating if AOE editor already reloaded the document |
+| this.data.**reloaded** | Boolean  | Boolean flag indicating if AOE editor already reloaded the document |
 
-When saving a document as a new file **is successful** the event is triggered twice. First event is triggered with `this.data.reloaded` set to `false` and second event is triggered with `this.data.reloaded` set to `true` when AOE finishes loading a new document.
+When saving a document as a new file **is successful** the event is triggered twice. The first event is triggered with `this.data.reloaded` set to `false` and the second event is triggered with `this.data.reloaded` set to `true` when AOE finishes loading a new document.
 
 ## AOE Button Clicked
 
@@ -709,7 +711,7 @@ The event is triggered along with the data described in the table below.
 
 # Translation Messages
 
-The plug-in allows translation of
+The plug-in allows the translation of
 
 | **Name** | **Default Text** |
 | :-- | :-- |
