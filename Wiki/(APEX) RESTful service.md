@@ -17,14 +17,9 @@ RESTful resource handlers are using predefined PL/SQL code which should not be c
 
 ## Creating a new document
 
-*   URI Template **files/create/:type**
-    
-*   Method **GET**
-    
-*   Source Type **PL/SQL**
-    
-*   format **JSON**
-    
+| URI Template       | Method | Source Type | Format |
+| ------------------ | ------ | ----------- | ------ |
+| files/create/:type | GET    | PL/SQL      | JSON   |
 
 When the end-user clicks on a new document icon and then selects a document type to be created, the AJAX call is performed to this resource handler.
 
@@ -78,14 +73,9 @@ end;
 
 ## Getting document meta-data
 
-*   URI Template **files/:filed**
-    
-*   Method **GET**
-    
-*   Source Type **PL/SQL**
-    
-*   format **JSON**
-    
+| URI Template | Method | Source Type | Format |
+| ------------ | ------ | ----------- | ------ |
+| files/:filed | GET    | PL/SQL      | JSON   |
 
 The REST handler is called when
 
@@ -142,14 +132,9 @@ end;
 
 ## Getting document contents
 
-*   URI Template **files/:fileid/contents**
-    
-*   Method **GET**
-    
-*   Source Type **PL/SQL**
-    
-*   format **JSON**
-    
+| URI Template           | Method | Source Type | Format |
+| ---------------------- | ------ | ----------- | ------ |
+| files/:fileid/contents | GET    | PL/SQL      | JSON   |
 
 The REST handler is requested after **getting document meta-data** is successful (HTTP status code 200) and it does return document contents to AOE server-side which is then displayed within the AOE editor.
 
@@ -204,14 +189,9 @@ end;
 
 ## Updating document content
 
-*   URI Template **files/:fileid/contents**
-    
-*   Method **POST**
-    
-*   Source Type **PL/SQL**
-    
-*   format **JSON**
-    
+| URI Template           | Method | Source Type | Format |
+| ---------------------- | ------ | ----------- | ------ |
+| files/:fileid/contents | POST   | PL/SQL      | JSON   |
 
 TBD
 
@@ -272,14 +252,9 @@ end;
 
 ## Saving existing document as a copy with a new filename
 
-*   URI Template **files/:fileid**
-    
-*   Method **POST**
-    
-*   Source Type **PL/SQL**
-    
-*   format **JSON**
-    
+| URI Template  | Method | Source Type | Format |
+| ------------- | ------ | ----------- | ------ |
+| files/:fileid | POST   | PL/SQL      | JSON   |
 
 TBD
 
