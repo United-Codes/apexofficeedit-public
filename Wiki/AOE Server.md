@@ -58,7 +58,7 @@ docker run -p 80:80 -e \"domain=\<dot-escaped-ords-server\>\" \--name aoe -d \--
 
 Example:
 ```sh
-docker run -p 80:80 -e "domain=wopi\\.apexrnd\\.be\" --name aoe -d --restart always uc/aoe:initial
+docker run -p 80:80 -e "domain=api\\.apexofficeedit\\.com\" --name aoe -d --restart always uc/aoe:initial
 ```
 
 Please check out all the configuration options that are available.
@@ -78,8 +78,8 @@ both background and foreground Docker containers.
 variables that are passed to the container.
 
 \<dot-escaped-ords-server\> is the address of the server running ORDS,
-that implements WOPI protocol, for example 10\\\\.2\\\\.60\\\\.2 or
-wopi\\\\.example\\\\.com. Double backslash is needed in command line,
+that implements AOE Rest handlers, for example 10\\\\.2\\\\.60\\\\.2 or
+api\\\\.example\\\\.com. Double backslash is needed in command line,
 because shell escapes the first, and the domain parameter takes a
 regular expression. Multiple domains can be set by separating the domain
 names with \| character.
@@ -95,7 +95,7 @@ while running the container. Also, admin username and password have to
 be provided while running the docker instance as:
 
 ```sh
-docker run -p 80:80 -e 'domain=wopi\\.apexrnd\\.be' -e 'username=admin' -e 'password=oracle' \
+docker run -p 80:80 -e 'domain=api\\.apexofficeedit\\.com' -e 'username=admin' -e 'password=oracle' \
        --name aoe -d --restart always uc/aoe:initial
 ```
 The other general run parameters can be found on:
@@ -466,7 +466,7 @@ docker cp font.ttf aoe:/user/local/share/fonts/font.ttf
 
 ### Network Configuration
 
-For developing environment, the WOPI has been set to run using http. If
+For developing environment, the AOE server has been set to run using http. If
 SSL is desired, it is recommended to use a proxy.
 
 #### Setting up Apache 2 reverse proxy
@@ -480,7 +480,7 @@ ssl.termination=true.
 
 ```
 <VirtualHost *:443>
-  ServerName wopi.unitedcodes.com:443
+  ServerName api.apexofficeedit.com:443
   Options -Indexes
 
   # SSL configuration, you may want to take the easy route instead and use Lets Encrypt!
@@ -509,7 +509,7 @@ ssl.termination=true.
   ProxyPass           /loleaflet http://127.0.0.1:9980/loleaflet retry=0
   ProxyPassReverse    /loleaflet http://127.0.0.1:9980/loleaflet
 
-  # WOPI discovery URL
+  # AOE Server discovery URL
   ProxyPass           /hosting/discovery http://127.0.0.1:9980/hosting/discovery retry=0
   ProxyPassReverse    /hosting/discovery http://127.0.0.1:9980/hosting/discovery
 
@@ -537,7 +537,7 @@ The corresponding loolwsd settings are ssl.enable=false and ssl.termination=true
 ```
 server {
     listen       443 ssl;
-    server_name  wopi.unitedcodes.com:443;
+    server_name  api.apexofficeedit.com:443;
 
     ssl_certificate /path/to/ssl_certificate;
     ssl_certificate_key /path/to/ssl_certificate_key;
@@ -548,7 +548,7 @@ server {
         proxy_set_header Host $http_host;
     }
 
-    # WOPI discovery URL
+    # AOE Server discovery URL
     location ^~ /hosting/discovery {
         proxy_pass http://localhost:9980;
         proxy_set_header Host $http_host;
@@ -614,7 +614,7 @@ configured in the coolwsd file:
 
 When docker image is behind a proxy which usages https but connects to
 docker image through plain http, the termination option should be set to
-true. This will cause the WOPI page to use secure WebSocket protocol
+true. This will cause the AOE page to use secure WebSocket protocol
 instead of plain WebSocket.
 
 ```xml
@@ -623,16 +623,16 @@ instead of plain WebSocket.
 </termination>
 ```
 
-### Configuring WOPI Server URL in APEX pages
+### Configuring AOE Server URL in APEX pages
 
-In the APEX page with WOPI file frame, there is a page item named:
+In the APEX page with AOE file frame, there is a page item named:
 
-PXX_WOPI_ACTION_URL
+PXX_AOE_ACTION_URL
 
 The value of this page item should be changed so that it points to the
-WOPI server:
+AOE server:
 
-http(s)://\<Your server running WOPI \>/browser/a21322665/cool.html
+http(s)://\<Your server running AOE \>/browser/a21322665/cool.html
 
 or for example
 
@@ -642,7 +642,7 @@ Please make sure that this server is reachable by the client.
 
 ### Adding IP as allowed hosts
 
-If a new URL (or host) needs access to WOPI, the domain name or the IP
+If a new URL (or host) needs access to AOE, the domain name or the IP
 address should be whitelisted or allowed. This can be done by editing
 the network settings in the coolwsd.xml file.
 
