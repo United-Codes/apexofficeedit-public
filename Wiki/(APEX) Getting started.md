@@ -8,7 +8,7 @@ This section describes the first steps of how to create the plug-in instance imp
 
 1. Create a new empty page
 
-![](../images/docs/get_start_app_create_instance_1.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_1.png?raw=true)
 
 
 
@@ -18,7 +18,7 @@ This section describes the first steps of how to create the plug-in instance imp
 2. Set **Identification \ Title** to **APEX Office Edit on default table**
 3. Change **Indentification \ Type** to **UC - APEX Office Edit (AOE) [Plug-in]**
 
-![](../images/docs/get_start_app_create_instance_2.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_2.png?raw=true)
 
 
 
@@ -29,7 +29,7 @@ This section describes the first steps of how to create the plug-in instance imp
 3. Change **Type** to **Hidden**
 4. Set **Settings \ Value Protected** to **No**
 
-![](../images/docs/get_start_app_create_instance_3.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_3.png?raw=true)
 
 ### Configure the plug-in 
 
@@ -37,7 +37,7 @@ This section describes the first steps of how to create the plug-in instance imp
 2. Set **Item Containing Primary Key Value** to **P7_DOCUMENT_ID**
 3. Save and run the page
 
-![](../images/docs/get_start_app_create_instance_4.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_4.png?raw=true)
 
 
 
@@ -45,9 +45,9 @@ This section describes the first steps of how to create the plug-in instance imp
 
 In the result, the plug-in is prepared to start creating a first document. Clicking on document icon creates a blank document of selected type. 
 
-![](../images/docs/get_start_app_create_instance_5.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_5.png?raw=true)
 
-![](../images/docs/get_start_app_create_instance_6.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_6.png?raw=true)
 
 ***
 
@@ -68,14 +68,14 @@ The instructions presented below are meant to be the continuation of **Creating 
 5. Select column **CONTENT** in **All files \ Columns tree**
 6. Set **Identification \ Type** to **Hidden Column**
 
-![](../images/docs/get_start_app_load_doc_1.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_1.png?raw=true)
 
 ### Define link on column FILENAME
 
 1. Select column **FILENAME in All files \ Columns tree**
 2. Set **Identification \ Type** to **Link**
 
-![](../images/docs/get_start_app_load_doc_2.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_2.png?raw=true)
 
 1. Click button **No Link Defined** in **Link \ Target**
 
@@ -85,7 +85,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 
    `javascript: apex.event.trigger(document, 'loaddocument', #ID#);`
 
-![](../images/docs/get_start_app_load_doc_3.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_3.png?raw=true)
 
 1. Click button **OK**
 2. Go to the next step to create a dynamic action
@@ -99,7 +99,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 5. Set **When \ Selection Type** to **JavaScript Expression**
 6. Set **When \ JavaScript Expression** to **document**
 
-![](../images/docs/get_start_app_load_doc_4.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_4.png?raw=true)
 
 ### Define true actions
 
@@ -110,20 +110,20 @@ The instructions presented below are meant to be the continuation of **Creating 
 5. Set **Affected Elements \ Item(s)** to **P7_DOCUMENT_ID**
 6. Set **Execution Options \ Fire on Initialization** to **No**
 
-![](../images/docs/get_start_app_load_doc_5.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_5.png?raw=true)
 
 1. Create a new true action
 2. Set **Identification \ Action** to **Refresh**
 3. Set **Affected Elements \ Selection Type** to **Region**
 4. Set **Affected Elements \ Region** to **APEX Office Edit on default table**
 
-![](../images/docs/get_start_app_load_doc_6.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_6.png?raw=true)
 
 1. Move region All files above region APEX Office Edit on default table
 2. Save and run the page
 
 Region column filename contains links. Clicking on a link will force APEX Office Edit to load the selected document by setting the primary key item and refreshing the region implementing the plug-in.
 
-![](../images/docs/get_start_app_load_doc_7.png)
+![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_7.png?raw=true)
 
 ***
