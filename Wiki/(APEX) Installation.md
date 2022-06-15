@@ -3,9 +3,8 @@
 The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
 *   by installing the AOE sample application 
-    
+
 *   by executing the DDL script and installing the region plug-in in an existing application (manual installation)
-    
 
 # Sample application
 
@@ -92,7 +91,7 @@ In order to finish the sample application installation, it is required to config
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_1.png?raw=true)
 
 3. In the **Upload Script dialog** click on item **File** and select the AOE installation file `ddl_unitedcodes_apex_office_edit.sql`
-2. Click the button **Upload**
+4. Click the button **Upload**
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_2.png?raw=true)
 
@@ -163,11 +162,11 @@ In order to create the first instance of the AOE please go to the instructions d
 
 9. Go back to the plug-in component settings
 
-10. Replace the attribute **URL to RESTful service module** default value ()`[http://www.apexrnd.be/ords181/aoe/aoe/files/` ) with the value copied in **step 8**  (the attribute **Full URL** of AOE RESTful service module)
+10. Replace the attribute **URL to RESTful service module** default value `http://www.apexrnd.be/ords181/aoe/aoe/files/` with the value copied in **step 8**  (the attribute **Full URL** of AOE RESTful service module)
 
 11. Add suffix `files/`
 
-12. In a new browser tab login to the APEX Office edit portal (accessible by clicking on the login button on the AOE [website](https://www.apexofficeedit.com/))
+12. In a new browser tab login to the APEX Office edit portal (accessible by clicking on the login button on the AOE <a href="https://www.apexofficeedit.com/">website</a>)
 
 13. Copy your **API Key** which will be visible next to your current plan under the **Your Cloud Subscriptions** section
 
@@ -180,4 +179,3 @@ In order to create the first instance of the AOE please go to the instructions d
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_3.png?raw=true)
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_4.png?raw=true)
-
