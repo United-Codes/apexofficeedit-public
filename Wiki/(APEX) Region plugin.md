@@ -19,19 +19,29 @@ The plug-in uses the following standard attributes exposed in the APEX page desi
 
 All attributes available as **Component Settings** are listed and described below.
 
+### API Key
+
+| Type | Required | Dependent on |
+| :--- | :------- | :----------- |
+| Text | No       | None         |
+
+Enter the valid API key. The API key is available in the APEX Office Edit portal: `https://www.apexofficeedit.com/ords/uc/r/aoe_portal/`
+
 ### Server-Side URL
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
 | Text | Yes      | None         |
 
-Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `[https://www.exmaple-domian.com](https://www.exmaple-domian.com/)` will be used to reference the server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
+Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `https://www.exmaple-domian.com/` will be used to reference the server-side file `https://www.exmaple-domian.com//browser/575607fac/cool.html`.
+
+The default value is `https://api.apexofficeedit.com/`
 
 ### URL to RESTful service module
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
-| Text | Yes      | None         |
+| Text | No       | None         |
 
 URL to **ORDS RESTful service module** handling the plugin operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**.
 
@@ -65,6 +75,7 @@ Available options:<br>
 * Open Document Text
 * Open Document Spreadsheet
 * Open Document Presentation
+* Open Document Draw
 
 ### Settings
 
@@ -78,7 +89,8 @@ Available options:
 
 | Option                      | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------- |
-| Override Component Settings | When selected, components settings **Form action** and **REST URL** can be overridden on the region level. |
+| Disable Editor Messages     | **When selected** - only error messages are being shown within APEX Office Edit editor. <br /><br />**When not selected** <br />the editor shows success message as the editor prompt within plug-in iframe and the end-user has to close prompt manualy. For example when document is succesfuly updated the editor shows message **Successfuly uploaded file**. |
+| Override Component Settings | When selected, components settings **Form action** and **REST URL** can be overridden on the region level in the page designer. |
 | Use Custom Table            | When selected, a custom table storing a document can be defined on the region level. Otherwise **AOE\_FILES\_DEFAULT** table is used. Learn more in **Database Objects**. |
 | Disable printing            | When selected, the end-user can't print the document using browser print functionality - the editor print button is not displayed. Printing is only possible when an APEX application is accessible under the same origin as the plug-in server-side files. Otherwise, printing is not possible - clicking the print button raises a cross-origin JavaScript error. |
 
