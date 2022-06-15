@@ -711,53 +711,52 @@ The event is triggered along with the data described in the table below.
 
 # Translation Messages
 
-The plug-in allows the translation of
+Some parts of the APEX Office Edit can be translated using **Oracle APEX Translation Texts**. 
 
-| **Name** | **Default Text** |
-| :-- | :-- |
-| UC\_AOE\_DIALOG\_SAVE\_BUTTON\_CANCEL | Cancel |
-| UC\_AOE\_DIALOG\_SAVE\_BUTTON\_SAVE\_AS | Save as |
-| UC\_AOE\_DIALOG\_SAVE\_ITEM\_FILENAME\_LABEL | Filename |
-| UC\_AOE\_DIALOG\_SAVE\_TITLE\_SAVE\_AS | Save as a new document |
-| UC\_AOE\_MASK\_ACT\_CREATING\_A\_FILE | Creating a new document |
-| UC\_AOE\_MASK\_ACT\_FILE\_CREATED | A new document has been created |
-| UC\_AOE\_MASK\_ACT\_FILE\_SAVED\_LOAD | Loading saved document |
-| UC\_AOE\_MASK\_ACT\_INIT\_AS\_SAVE | Saving document as a new document |
-| UC\_AOE\_MASK\_ACT\_INIT\_SAVE | Saving document in progress |
-| UC\_AOE\_MASK\_ACT\_REFRESHING | Refreshing |
-| UC\_AOE\_MASK\_ACT\_REINITIALIZING | Re-initializing |
-| UC\_AOE\_MASK\_AOE\_INIT | Initializing APEX Office Edit |
-| UC\_AOE\_MASK\_BTN\_CLOSE | Close |
-| UC\_AOE\_MASK\_BTN\_NEW\_FILE\_PANEL | Create a new file |
-| UC\_AOE\_MASK\_BTN\_REFRESH | Refresh |
-| UC\_AOE\_MASK\_MSG\_FILE\_LOADED | Document loaded |
-| UC\_AOE\_MASK\_MSG\_FRAME\_READY | Frame ready |
-| UC\_AOE\_NEW\_DOCUMENT\_BACK\_TO\_EDIT | Get back to the currently opened document |
-| UC\_AOE\_NEW\_FILE\_BTN\_HINT | Create a new document |
-| UC\_AOE\_NEW\_FILE\_BTN\_LABEL | Create a new document |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_DOCX | Microsoft Word |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_ODP | Open Document Presentation |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_ODS | Open Document Spreadsheet |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_ODT | Open Document Text |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_PPTX | Microsoft PowerPoint |
-| UC\_AOE\_NEW\_FILE\_TYPE\_TITLE\_XLSX | Microsoft Excel |
-| UC\_AOE\_REST\_ACCESS\_TOKEN\_INVALID | Invalid access token. |
-| UC\_AOE\_REST\_ATTR\_INVALID\_CFG | The plug-in configuration is invalid. |
-| UC\_AOE\_REST\_FILE\_NOT\_FOUND | Requested document not found. |
-| UC\_AOE\_REST\_FILE\_NOT\_TYPE\_NOT\_ALLOWED | Document type is not allowed. |
-| UC\_AOE\_REST\_NOT\_RECOGNIZED\_HTTP\_STATUS | Not handled HTTP status code. Contact application admistrator. |
-| UC\_AOE\_REST\_OTHER\_PLSQL\_ERROR | Unexpected error was raised. Contact application administrator. |
-| UC\_AOE\_REST\_SAVEAS\_INV\_REQ\_HEAD\_FILENAMES | Malformed reuqest header (filenames) |
-| UC\_AOE\_REST\_SAVEAS\_INV\_REQ\_HEAD\_MISSING\_FILENAME | Malformed reuqest header (missing filename) |
-| UC\_AOE\_REST\_SAVEAS\_INV\_REQ\_HEAD\_PUT\_RELATIVE | Malformed request header (PUT\_RELATIVE). |
-| UC\_AOE\_REST\_SCOPE\_CREATE\_DOC\_FAIL | Creating a new document failed. |
-| UC\_AOE\_REST\_SCOPE\_DOC\_CONTENT | Fetching document contents failed. |
-| UC\_AOE\_REST\_SCOPE\_DOC\_META | Fetching document meta-data failed. |
-| UC\_AOE\_REST\_SCOPE\_SAVEAS\_FAIL | Saving document as copy failed. |
-| UC\_AOE\_REST\_SCOPE\_UPDATE\_FAIL | Updating document contents failed. |
-| UC\_AOE\_REST\_UNKNOWN\_UC\_MESSAGE\_STATUS | Not handled plug-in message status.<br/>Contact application administrator |
-| UC\_AOE\_REST\_UPDATE\_OK | Document saved successfuly |
-| UC\_AOE\_REST\_UPDATE\_STATUS\_409 | Malformed last update time. |
-| UC\_AOE\_REST\_USER\_CANT\_READ\_FILE | User is not permitted to read the document. |
-| UC\_AOE\_VALIDATION\_FILENAME\_CONTAINS\_WHITE\_SPACE | Filename can't contain white spaces |
-| UC\_AOE\_VALIDATION\_FILENAME\_NOT\_SET | Filename is required |
+| Translation Code                                 | Translation default text                                     |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| UC_AOE_DIALOG_SAVE_BUTTON_CANCEL                 | Cancel                                                       |
+| UC_AOE_DIALOG_SAVE_BUTTON_SAVE_AS                | Save as                                                      |
+| UC_AOE_DIALOG_SAVE_ITEM_FILENAME_LABEL           | Filename                                                     |
+| UC_AOE_DIALOG_SAVE_TITLE_SAVE_AS                 | Save as a new document                                       |
+| UC_AOE_MASK_ACT_CREATING_A_FILE                  | Creating a new document                                      |
+| UC_AOE_MASK_ACT_FILE_CREATED                     | A new document has been created                              |
+| UC_AOE_MASK_ACT_FILE_SAVED_LOAD                  | Loading saved document                                       |
+| UC_AOE_MASK_ACT_INIT_AS_SAVE                     | Saving document as a new document                            |
+| UC_AOE_MASK_ACT_INIT_SAVE                        | Saving a document in progress                                |
+| UC_AOE_MASK_ACT_REFRESHING                       | Refreshing                                                   |
+| UC_AOE_MASK_AOE_INIT                             | Initializing APEX Office Edit                                |
+| UC_AOE_MASK_BTN_CLOSE                            | Close                                                        |
+| UC_AOE_MASK_BTN_NEW_FILE_PANEL                   | Create a new file                                            |
+| UC_AOE_MASK_BTN_REFRESH                          | Refresh                                                      |
+| UC_AOE_MASK_MSG_FILE_LOADED                      | Document loaded                                              |
+| UC_AOE_MASK_MSG_FRAME_READY                      | Frame ready                                                  |
+| UC_AOE_MASK_MSG_IFRAME_LOADED                    | Iframe loaded                                                |
+| UC_AOE_NEW_DOCUMENT_BACK_TO_EDIT                 | Get back to the currently opened document                    |
+| UC_AOE_NEW_FILE_BTN_HINT                         | Create a new document                                        |
+| UC_AOE_NEW_FILE_BTN_LABEL                        | Create a new document                                        |
+| UC_AOE_NEW_FILE_TYPE_TITLE_DOCX                  | Microsoft Word                                               |
+| UC_AOE_NEW_FILE_TYPE_TITLE_ODP                   | Open Document Presentation                                   |
+| UC_AOE_NEW_FILE_TYPE_TITLE_ODS                   | Open Document Spreadsheet                                    |
+| UC_AOE_NEW_FILE_TYPE_TITLE_ODT                   | Open Document Text                                           |
+| UC_AOE_NEW_FILE_TYPE_TITLE_PPTX                  | Microsoft PowerPoint                                         |
+| UC_AOE_NEW_FILE_TYPE_TITLE_XLSX                  | Microsoft Excel                                              |
+| UC_AOE_READONLY_PROMPT_MESSAGE                   | Load a document to preview it.                               |
+| UC_AOE_REST_ACCESS_TOKEN_INVALID                 | The invalid access token.                                    |
+| UC_AOE_REST_ATTR_INVALID_CFG                     | The plug-in configuration is invalid.                        |
+| UC_AOE_REST_FILE_NOT_FOUND                       | Requested document not found.                                |
+| UC_AOE_REST_FILE_NOT_TYPE_NOT_ALLOWED            | Document type is not allowed.                                |
+| UC_AOE_REST_NOT_RECOGNIZED_HTTP_STATUS           | Not handled HTTP status code. Contact the application administrator. |
+| UC_AOE_REST_OTHER_PLSQL_ERROR                    | An unexpected error was raised. Contact the application administrator. |
+| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_FILENAMES        | Malformed request header (filenames)                         |
+| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_MISSING_FILENAME | Malformed request header (missing filename)                  |
+| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_PUT_RELATIVE     | Malformed request header (PUT_RELATIVE).                     |
+| UC_AOE_REST_SCOPE_DOC_CONTENT                    | Fetching document contents failed.                           |
+| UC_AOE_REST_SCOPE_DOC_META                       | Fetching document meta-data failed.                          |
+| UC_AOE_REST_SCOPE_SAVEAS_FAIL                    | Saving document as copy failed.                              |
+| UC_AOE_REST_SCOPE_UPDATE_FAIL                    | Updating document contents failed.                           |
+| UC_AOE_REST_UNKNOWN_UC_MESSAGE_STATUS            | Not handled plug-in message status.<br/>Contact application  administrator |
+| UC_AOE_REST_UPDATE_OK                            | Document saved successfully                                  |
+| UC_AOE_REST_UPDATE_STATUS_409                    | Malformed last update time.                                  |
+| UC_AOE_REST_USER_CANT_READ_FILE                  | The user is not permitted to read the document.              |
+| UC_AOE_VALIDATION_FILENAME_NOT_SET               | Filename is required                                         |
