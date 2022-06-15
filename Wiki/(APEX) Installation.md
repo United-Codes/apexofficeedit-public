@@ -162,9 +162,20 @@ In order to create the first instance of the AOE please go to the instructions d
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_2.png?raw=true)
 
 9. Go back to the plug-in component settings
+
 10. Replace the attribute **URL to RESTful service module** default value ()`[http://www.apexrnd.be/ords181/aoe/aoe/files/` ) with the value copied in **step 8**  (the attribute **Full URL** of AOE RESTful service module)
+
 11. Add suffix `files/`
-12. Click the button **Apply Changes**
+
+12. In a new browser tab login to the APEX Office edit portal (accessible by clicking on the login button on the AOE [website](https://www.apexofficeedit.com/))
+
+13. Copy your **API Key** which will be visible next to your current plan under the **Your Cloud subscriptions** section
+
+    ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_0.png?raw=true)
+
+14. Go back to you APEX application and paste the previously copied API Key from the APEX Office Edit portal in the **API Key** field
+
+15. Click the button **Apply Changes**
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_3.png?raw=true)
 
