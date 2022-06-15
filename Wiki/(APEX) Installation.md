@@ -169,11 +169,11 @@ In order to create the first instance of the AOE please go to the instructions d
 
 12. In a new browser tab login to the APEX Office edit portal (accessible by clicking on the login button on the AOE [website](https://www.apexofficeedit.com/))
 
-13. Copy your **API Key** which will be visible next to your current plan under the **Your Cloud subscriptions** section
+13. Copy your **API Key** which will be visible next to your current plan under the **Your Cloud Subscriptions** section
 
     ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_plug_comp_0.png?raw=true)
 
-14. Go back to you APEX application and paste the previously copied API Key from the APEX Office Edit portal in the **API Key** field
+14. Go back to your APEX application and paste the previously copied API Key from the APEX Office Edit portal in the **API Key** field
 
 15. Click the button **Apply Changes**
 
