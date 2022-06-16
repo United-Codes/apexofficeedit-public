@@ -175,11 +175,11 @@ Available options include:
 | :--- | :------- | :----------------------------------------------------------- |
 | Text | Yes      | Document Permissions \ Custom function returning document permissions **is selected** |
 
-Specify PL/SQL function name returning document permission for the end-user and document ID(s). The given function must be:
+Specify PL/SQL function name returning the end-user permission for the document specified by the function argument`p_file_id`. The given function must be:
 
 * accessible in the context of the given ORDS RESTful service module
-* accepting defined arguments
-* returning `VARCHAR2` string containing document permissions to **read**, **update**, **save as a new file** and **print** a document
+* accepting specified arguments
+* returning `VARCHAR2` string containing the end-user permissions to **read**, **update**, **save as a new file** and **print** the document
 
 The function specification is the following:
 
@@ -213,11 +213,11 @@ The returned value from the function must be following the pattern `X:Y:Z:P` whe
 
 *   **P** is permission to **print document from browser**.
 
-Allowed values are **0** and **1**, where
+Allowed values are `0` and `1`, where
 
-*   **0** is **permission denied**,
+*   `0` is **permission denied**,
 
-*   **1** is **permission granted**.
+*   `1` is **permission granted**.
 
 ### On Document Read Callback
 
@@ -740,50 +740,21 @@ The event is triggered along with the data described in the table below.
 
 Some parts of the APEX Office Edit can be translated using **Oracle APEX Translation Texts**. 
 
-| Translation Code                                 | Translation default text                                     |
-| ------------------------------------------------ | ------------------------------------------------------------ |
-| UC_AOE_DIALOG_SAVE_BUTTON_CANCEL                 | Cancel                                                       |
-| UC_AOE_DIALOG_SAVE_BUTTON_SAVE_AS                | Save as                                                      |
-| UC_AOE_DIALOG_SAVE_ITEM_FILENAME_LABEL           | Filename                                                     |
-| UC_AOE_DIALOG_SAVE_TITLE_SAVE_AS                 | Save as a new document                                       |
-| UC_AOE_MASK_ACT_CREATING_A_FILE                  | Creating a new document                                      |
-| UC_AOE_MASK_ACT_FILE_CREATED                     | A new document has been created                              |
-| UC_AOE_MASK_ACT_FILE_SAVED_LOAD                  | Loading saved document                                       |
-| UC_AOE_MASK_ACT_INIT_AS_SAVE                     | Saving document as a new document                            |
-| UC_AOE_MASK_ACT_INIT_SAVE                        | Saving a document in progress                                |
-| UC_AOE_MASK_ACT_REFRESHING                       | Refreshing                                                   |
-| UC_AOE_MASK_AOE_INIT                             | Initializing APEX Office Edit                                |
-| UC_AOE_MASK_BTN_CLOSE                            | Close                                                        |
-| UC_AOE_MASK_BTN_NEW_FILE_PANEL                   | Create a new file                                            |
-| UC_AOE_MASK_BTN_REFRESH                          | Refresh                                                      |
-| UC_AOE_MASK_MSG_FILE_LOADED                      | Document loaded                                              |
-| UC_AOE_MASK_MSG_FRAME_READY                      | Frame ready                                                  |
-| UC_AOE_MASK_MSG_IFRAME_LOADED                    | Iframe loaded                                                |
-| UC_AOE_NEW_DOCUMENT_BACK_TO_EDIT                 | Get back to the currently opened document                    |
-| UC_AOE_NEW_FILE_BTN_HINT                         | Create a new document                                        |
-| UC_AOE_NEW_FILE_BTN_LABEL                        | Create a new document                                        |
-| UC_AOE_NEW_FILE_TYPE_TITLE_DOCX                  | Microsoft Word                                               |
-| UC_AOE_NEW_FILE_TYPE_TITLE_ODP                   | Open Document Presentation                                   |
-| UC_AOE_NEW_FILE_TYPE_TITLE_ODS                   | Open Document Spreadsheet                                    |
-| UC_AOE_NEW_FILE_TYPE_TITLE_ODT                   | Open Document Text                                           |
-| UC_AOE_NEW_FILE_TYPE_TITLE_PPTX                  | Microsoft PowerPoint                                         |
-| UC_AOE_NEW_FILE_TYPE_TITLE_XLSX                  | Microsoft Excel                                              |
-| UC_AOE_READONLY_PROMPT_MESSAGE                   | Load a document to preview it.                               |
-| UC_AOE_REST_ACCESS_TOKEN_INVALID                 | The invalid access token.                                    |
-| UC_AOE_REST_ATTR_INVALID_CFG                     | The plug-in configuration is invalid.                        |
-| UC_AOE_REST_FILE_NOT_FOUND                       | Requested document not found.                                |
-| UC_AOE_REST_FILE_NOT_TYPE_NOT_ALLOWED            | Document type is not allowed.                                |
-| UC_AOE_REST_NOT_RECOGNIZED_HTTP_STATUS           | Not handled HTTP status code. Contact the application administrator. |
-| UC_AOE_REST_OTHER_PLSQL_ERROR                    | An unexpected error was raised. Contact the application administrator. |
-| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_FILENAMES        | Malformed request header (filenames)                         |
-| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_MISSING_FILENAME | Malformed request header (missing filename)                  |
-| UC_AOE_REST_SAVEAS_INV_REQ_HEAD_PUT_RELATIVE     | Malformed request header (PUT_RELATIVE).                     |
-| UC_AOE_REST_SCOPE_DOC_CONTENT                    | Fetching document contents failed.                           |
-| UC_AOE_REST_SCOPE_DOC_META                       | Fetching document meta-data failed.                          |
-| UC_AOE_REST_SCOPE_SAVEAS_FAIL                    | Saving document as copy failed.                              |
-| UC_AOE_REST_SCOPE_UPDATE_FAIL                    | Updating document contents failed.                           |
-| UC_AOE_REST_UNKNOWN_UC_MESSAGE_STATUS            | Not handled plug-in message status.<br/>Contact application  administrator |
-| UC_AOE_REST_UPDATE_OK                            | Document saved successfully                                  |
-| UC_AOE_REST_UPDATE_STATUS_409                    | Malformed last update time.                                  |
-| UC_AOE_REST_USER_CANT_READ_FILE                  | The user is not permitted to read the document.              |
-| UC_AOE_VALIDATION_FILENAME_NOT_SET               | Filename is required                                         |
+| ranslation Code                        | Translation default text                                     |
+| -------------------------------------- | ------------------------------------------------------------ |
+| UC_AOE_CONFIRM_CREATE_NEW_NOT_SAVED    | The current document is not saved. Creating a  new document will discard changes in the current document. \n\nDo you want to  continue? |
+| UC_AOE_DIALOG_SAVE_BUTTON_CANCEL       | Cancel                                                       |
+| UC_AOE_DIALOG_SAVE_BUTTON_SAVE_AS      | Save as                                                      |
+| UC_AOE_DIALOG_SAVE_ITEM_FILENAME_LABEL | Filename                                                     |
+| UC_AOE_DIALOG_SAVE_TITLE_SAVE_AS       | Save as a new document                                       |
+| UC_AOE_DIALOG_SAVE_VAL_FILENAME_NOTSET | Filename is required                                         |
+| UC_AOE_MASK_BTN_CLOSE                  | Close                                                        |
+| UC_AOE_MASK_BTN_NEW_FILE_PANEL         | Create a new file                                            |
+| UC_AOE_MASK_BTN_REFRESH                | Refresh                                                      |
+| UC_AOE_MASK_BTN_REINIT_CANCEL          | Cancel                                                       |
+| UC_AOE_NEW_DOC_BACK_TO_EDIT            | Get back to the currently opened document                    |
+| UC_AOE_NEW_DOC_BTN_HINT                | Create a new document                                        |
+| UC_AOE_NEW_DOC_BTN_LABEL               | Create a new document                                        |
+| UC_AOE_NEW_DOC_GOBACK                  | Go back to open document                                     |
+| UC_AOE_READONLY_MESSAGE                | Load a document to preview it.                               |
+| UC_AOE_REST_UPDATE_OK                  | Document saved successfully                                  |
