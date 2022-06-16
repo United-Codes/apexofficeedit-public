@@ -1,10 +1,8 @@
 # Creating the plug-in instance in an existing application
 
-This section describes the first steps of how to create the plug-in instance implementing APEX Office Edit. If any plug-in attribute purpose is not clear, please read the help texts defined for Oracle APEX page designer.
+This section describes the first steps of how to create the plug-in instance implementing APEX Office Edit. If any plug-in attribute purpose is not clear, please read the help texts defined for Oracle APEX page designer. It's using the default tables that come with APEX Office Edit.
 
-## Default table
-
-### Create a new page
+## Create a new page
 
 1. Create a new empty page
 
@@ -12,7 +10,7 @@ This section describes the first steps of how to create the plug-in instance imp
 
 
 
-### Create the plug-in region
+## Create the plug-in region
 
 1. Create a new region
 2. Set **Identification \ Title** to **APEX Office Edit on default table**
@@ -22,7 +20,7 @@ This section describes the first steps of how to create the plug-in instance imp
 
 
 
-### Create APEX item containing document ID
+## Create APEX item containing document ID
 
 1. Create page item 
 2. Set **Identification \ Name** to **P7_DOCUMENT_ID**
@@ -31,7 +29,7 @@ This section describes the first steps of how to create the plug-in instance imp
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_create_instance_3.png?raw=true)
 
-### Configure the plug-in 
+## Configure the plug-in 
 
 1. Go to region **APEX Office Edit on default table \ Attributes**
 2. Set **Item Containing Primary Key Value** to **P7_DOCUMENT_ID**
@@ -41,7 +39,7 @@ This section describes the first steps of how to create the plug-in instance imp
 
 
 
-### Testing the plug-in
+## Testing the plug-in
 
 In the result, the plug-in is prepared to start creating a first document. Clicking on document icon creates a blank document of selected type. 
 
@@ -55,11 +53,9 @@ In the result, the plug-in is prepared to start creating a first document. Click
 
 This section describes the first steps of how to load documents into APEX Office Edit. The plug-in state is based on `APEX Session State` for page items defined as primary key(s). If the given item(s) is/are NULL the plug-in shows a panel allowing the end-user to create a new document. In order to load a document to the AOE, item(s) must not be NULL, and the plug-in configuration must be valid.
 
-## Default table
-
 The instructions presented below are meant to be the continuation of **Creating the plug-in instance in an existing application**.
 
-### Create classic report showing all created files
+## Create classic report showing all created files
 
 1. Create a new page region
 2. Set **Identification \ Title** to **All files**
@@ -70,7 +66,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_1.png?raw=true)
 
-### Define link on column FILENAME
+## Define link on column FILENAME
 
 1. Select column **FILENAME in All files \ Columns tree**
 2. Set **Identification \ Type** to **Link**
@@ -90,7 +86,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 1. Click button **OK**
 2. Go to the next step to create a dynamic action
 
-### Create dynamic action enforcing loading a file
+## Create dynamic action enforcing loading a file
 
 1. Create a new dynamic action
 2. Set **Identification \ Name** to **Load document**
@@ -101,7 +97,7 @@ The instructions presented below are meant to be the continuation of **Creating 
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_app_load_doc_4.png?raw=true)
 
-### Define true actions
+## Define true actions
 
 1. Select default **Show** action
 2. Set **Identification \ Action** to **Set Value**
