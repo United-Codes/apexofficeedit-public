@@ -460,7 +460,9 @@ The plug-in access token properties are described in the table below.
 | ---- | -------- | ------------------------------------------ |
 | Text | Yes      | Settings \ Use Custom Table **is checked** |
 
-A custom table name in which a document content is stored. A custom table must have (at least) the following types of columns:
+A custom table name in which a document content is stored. The table name can be prefixed with `#OWNER#` to reference the current parsing schema, ie. `#OWNER#.AOE_FILES_DEFAULT.` The table must be accessible by the plug-in REST service.
+
+A custom table must have (at least) the following types of columns:
 
 | Description                                                  | Type         |
 | :----------------------------------------------------------- | :----------- |
@@ -547,6 +549,8 @@ function( pOptions ) {
   pOptions.logPrefixAsStaticId = false;  
   pOptions.height              = 500;
   pOptions.zoomLevel           = 10;  
+  pOptions.theme               = 'light';
+  pOptions.hidePoweredBy       = false;  
   
   return pOptions;
 }
@@ -644,6 +648,17 @@ The list of zoom levels to be used for the is listed below:
 *   level **18** = **400%**
 *   level **19** = **400%**
 *   level **20** = **400%**
+
+### theme `String`
+
+The property is used to apply **light** or **dark** theme. When set to
+
+- `light` - the light theme is used for the AOE editor
+- `dark` - the dark theme is used for the AOE editor
+
+### hidePoweredBy `Boolean`
+
+Flag determining whether the AOE logo is displayed in the new file panel.
 
 # Events
 
