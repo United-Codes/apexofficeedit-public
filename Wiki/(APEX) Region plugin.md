@@ -43,9 +43,15 @@ The default value is `https://api.apexofficeedit.com/`
 | :--- | :------- | :----------- |
 | Text | No       | None         |
 
-URL to **ORDS RESTful service module** handling the plugin operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**.
+The valid URL to **ORDS RESTful service module** handling the plug-in operations:
 
-The plug-in is delivered with the default ORDS RESTful service module named **APEX OFFice Edit**. The URL must include the suffix `files/`, for example, `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
+- create a new document, 
+- save changes, 
+- save document as, 
+- get document information, 
+- get document content. 
+
+The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**.  The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. and it must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
 ### Default Document Filename
 
@@ -89,10 +95,10 @@ Available options:
 
 | Option                      | Description                                                  |
 | :-------------------------- | :----------------------------------------------------------- |
-| Disable Editor Messages     | **When selected** - only error messages are being shown within APEX Office Edit editor. <br /><br />**When not selected** <br />the editor shows success message as the editor prompt within plug-in iframe and the end-user has to close prompt manualy. For example when document is succesfuly updated the editor shows message **Successfuly uploaded file**. |
-| Override Component Settings | When selected, components settings **Form action** and **REST URL** can be overridden on the region level in the page designer. |
-| Use Custom Table            | When selected, a custom table storing a document can be defined on the region level. Otherwise **AOE\_FILES\_DEFAULT** table is used. Learn more in **Database Objects**. |
-| Disable printing            | When selected, the end-user can't print the document using browser print functionality - the editor print button is not displayed. Printing is only possible when an APEX application is accessible under the same origin as the plug-in server-side files. Otherwise, printing is not possible - clicking the print button raises a cross-origin JavaScript error. |
+| Disable Editor Messages     | **When selected**<br />only the AOE error messages are being shown as the AOE editor prompt. Messages about successful operations are not shown to the end-user. <br /><br />**When not selected** <br />all messages including success messages are displayed within the AOE editor and the end-user has to close prompts manually. For example when a document has been successfully updated the editor shows the message **Successfully uploaded file**. |
+| Override Component Settings | When selected, the plug-in components settings **Form action** and **REST URL** can be overridden on the region level in the page designer. Otherwise the attributes defined in the plug-in component settings are used by the default. |
+| Use Custom Table            | **When selected**<br/>a developer can specify a table in which documents will be stored<br/><br/>**When not selected**<br/>The default table **AOE_FILES_DEFAULT** is used to store documents. Learn more about the table in **Database Objects**. |
+| Disable printing            | When selected the end-user can't print the document using browser print functionality - the editor print button is not displayed. <br/><br/>Printing should be only enabled when an APEX application implementing the plug-in is in the same origin as the AOE host server files. |
 
 ### Server-Side URL
 
@@ -100,7 +106,9 @@ Available options:
 | :--- | :------- | :---------------------------------------------------- |
 | Text | Yes      | Settings \ Override Component Settings **is checked** |
 
-Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `[https://www.exmaple-domian.com](https://www.exmaple-domian.com/)` will be used to reference the server-side file `https://www.exmaple-domian.com/browser/aoe/cool.html`.
+Specify the URL under which the plug-in server-side files can be accessed. For example, the URL `https://www.exmaple-domian.com/` will be used to reference the server-side file `https://www.exmaple-domian.com//browser/575607fac/cool.html`.
+
+The default value is `https://api.apexofficeedit.com/`
 
 ### URL to RESTful service module
 
@@ -108,9 +116,15 @@ Specify the URL under which the plug-in server-side files can be accessed. For e
 | :--- | :------- | :---------------------------------------------------- |
 | Text | Yes      | Settings \ Override Component Settings **is checked** |
 
-URL to **ORDS RESTful service module** handling the plug-in operations **create a new document**, **save changes**, **save document as**, **get document information** and **get document content**. The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. 
+The valid URL to **ORDS RESTful service module** handling the plug-in operations:
 
-The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**. The URL must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
+- create a new document, 
+- save changes, 
+- save document as, 
+- get document information, 
+- get document content. 
+
+The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**.  The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. and it must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
 ### Item(s) Containing Primary Key(s) Value(s)
 
@@ -118,15 +132,15 @@ The plug-in is delivered with the default ORDS RESTful service module named **AP
 | :----------- | :------- | :----------- |
 | Page Item(s) | Yes      | None         |
 
-A given APEX page item(s) is (are) used to identify a document to be loaded from default `AOE_FILES_DEFAULT` or custom table.
+A given APEX page item(s) is (are) used to identify a document to be loaded from the database table. When any APEX item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
 
 **When use custom table is checked**
 
-Enter the page item containing the document's primary key. When an item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
+Enter comma-delimited page items containing the primary key(s) value(s) of a document to be loaded from a custom table. 
 
 **When use custom table is not checked**
 
-Enter comma-delimited page items containing the primary key(s) value(s) of a document to be loaded. When any APEX item specified as the primary key is set to `NULL`, the plug-in shows the document creation panel.
+Enter the page item containing the document's primary key **AOE_FILES_DEFAULT.ID**. 
 
 ### Menu layout
 
@@ -134,12 +148,12 @@ Enter comma-delimited page items containing the primary key(s) value(s) of a doc
 | :---------- | :------- | :----------- |
 | Select list | Yes      | None         |
 
-Select the layout of the editor menu to be used, available options are the following:
+Select the AOE editor menu layout to be used.
 
 | Option       | Description                                                  |
 | :----------- | :----------------------------------------------------------- |
-| Classic      | An old-fashioned drop-down menu layout is used to render the editor menu. Hiding menu entries is **possible**. The menu customization can be done using the plug-in attribute **JavaScript Initialization Code**. See the help text for the attribute **JavaScript Initialization Code** to learn more. |
-| Notebook Bar | The menu layout is organized as tabs and is user-friendly - menu entries are using icons. Hiding menu entries is **not possible**. |
+| Classic      | An old-fashioned drop-down menu layout is used to render the editor menu. The classic layout supports hidding menu entries. <br/>Hidding menu entries can be set using the the plug-in region attribute **JavaScript Initialization Code**. <br/>To learn more read **Additional Meta Data \ Initialization JavaScript Code \ menuHideItems**. |
+| Notebook Bar | The menu layout is organized as tabs and menu entries are displayed along with corresponding icons. <br /><br />The notebook bar doesn't support hidding menu entries. |
 
 ### Document Permissions
 
@@ -147,12 +161,13 @@ Select the layout of the editor menu to be used, available options are the follo
 | :---------- | :------- | :----------- |
 | Select list | Yes      | None         |
 
-Available options:
+Available options include:
 
-* Everyone can read and edit
+* Everyone can read and edit 
 * Only the author can read and edit
 * Everyone can read but the author can edit
-* Custom function returning document permissions - when selected, the PL/SQL function is used to return document permission. See the attribute **Function Returning Document Permissions** for more details.
+* Custom function returning document permissions - when selected, the PL/SQL function is used to return document permission. 
+  See the attribute **Function Returning Document Permissions** to learn more.
 
 ### Function Returning Document Permissions
 
@@ -518,7 +533,7 @@ A column name which type is `VARCHAR2` and is meant to store a document's owner 
 
 # Additional Meta Data
 
-## Has "Initialization JavaScript Code" Attribute
+## Initialization JavaScript Code
 
 The attribute value must be an anonymous function accepting only one parameter which is a JSON object containing all plug-in options rendered from the plug-in package on page load. The function must return this JSON object to initialize the plug-in. Specified object properties can be used to customize the plug-in UI and logging in the application debug mode enabled.
 
