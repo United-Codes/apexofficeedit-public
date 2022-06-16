@@ -1,3 +1,5 @@
+# Database Objects
+
 The summary below describes all database objects created after installing the sample application or installing the AOE as a standalone plug-in in an existing Oracle APEX application:
 
 - column **The plug-in** describes whether an object is required for the manual installation

@@ -1,4 +1,4 @@
-# Introduction
+# Installation
 
 The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
@@ -6,9 +6,9 @@ The plug-in implementing **APEX Office Edit** can be installed in two scenarios:
 
 *   by executing the DDL script and installing the region plug-in in an existing application (manual installation)
 
-# Sample application
+## Sample application
 
-## **Importing sample application**
+### **Importing sample application**
 
 1. Log into your application builder
 2. Click on the tile Import tile to start APEX wizard installing application from the application installation file
@@ -28,7 +28,7 @@ After successfully uploading the application installation file, the APEX shows t
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_3.png?raw=true)
 
-## Set application installation settings
+### Set application installation settings
 
 1. Configure or use default values in the form
 2. Click the button **Install Application**
@@ -62,14 +62,14 @@ After successfully uploading the application installation file, the APEX shows t
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_imp_sample_app_10.png?raw=true)
 
-## Configure the plug-in RESTful service
+### Configure the plug-in RESTful service
 
 In order to finish the sample application installation, it is required to configure the plug-in RESTful service
 
 1. Fill in the instructions described in **The plug-in REST service configuration**
 2. Test the sample application
 
-## Testing the sample application
+### Testing the sample application
 
 1. Run the AOE sample application
 2. Click on a document type tile you wish to create
@@ -81,9 +81,9 @@ In order to finish the sample application installation, it is required to config
 
 ***
 
-# Manual installation
+## Manual installation
 
-## Running installation DDL Script
+### Running installation DDL Script
 
 1. From the APEX application builder top menu bar select **SQL Workshops** and then **SQL Scripts**
 2. Click button **Upload**
@@ -108,7 +108,7 @@ In order to finish the sample application installation, it is required to config
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/get_start_manual_script_5.png?raw=true)
 
-## Installing the plug-in in an existing example application
+### Installing the plug-in in an existing example application
 
 1. Go to APEX application builder home page
 2. Select the application in which you want to use **APEX Office Edit**
@@ -134,18 +134,18 @@ After successful installation, the plug-in component settings must be updated. G
 
 In order to create the first AOE instance please follow instructions **Creating the plug-in instance in an existing application**
 
-## Configure the plug-in RESTful service
+### Configure the plug-in RESTful service
 
 In order to finish the sample application installation, it is required to configure the plug-in RESTful service:
 
 1. Fill in the instructions described in **The plug-in REST service configuration**
 2. Test the sample application
 
-## Implement the plug-in in an existing application
+### Implement the plug-in in an existing application
 
 In order to create the first instance of the AOE please go to the instructions described in section **Getting started \ Creating the plug-in instance in an existing application**.
 
-# The plug-in REST service configuration
+## The plug-in REST service configuration
 
 1. Go to an application **Shared Components**
 2. Go to **Other Components \\ Plug-ins**

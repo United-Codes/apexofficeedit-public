@@ -1,3 +1,5 @@
+# REST Web Service
+
 The APEX Office Edit is delivered with fully configurated RESTful service module handling all document operations:
 
 *   creating a new document,
@@ -11,11 +13,11 @@ The APEX Office Edit is delivered with fully configurated RESTful service module
 *   saving existing document as a copy with a new filename
     
 
-# Resource handlers
+## Resource handlers
 
 RESTful resource handlers are using predefined PL/SQL code which should not be changed. Otherwise APEX Office Edit might be not working properly.
 
-## Creating a new document
+### Creating a new document
 
 | URI Template       | Method | Source Type | Format |
 | ------------------ | ------ | ----------- | ------ |
@@ -71,7 +73,7 @@ end;
 | :type | URI template parameter |
 | :status\_code | Native REST bind variable to assign HTTP status code |
 
-## Getting document meta-data for APEX
+### Getting document meta-data for APEX
 
 | URI Template    | Method | Source Type | Format |
 | --------------- | ------ | ----------- | ------ |
@@ -117,7 +119,7 @@ end;
 
 
 
-## Getting document meta-data for AOE host
+### Getting document meta-data for AOE host
 
 | URI Template | Method | Source Type | Format |
 | ------------ | ------ | ----------- | ------ |
@@ -171,7 +173,7 @@ end;
 | :status\_code | Native REST bind variable to assign HTTP status code |
 | :content\_type | Native REST bind variable to assign response content type |
 
-## Getting document contents
+### Getting document contents
 
 | URI Template           | Method | Source Type | Format |
 | ---------------------- | ------ | ----------- | ------ |
@@ -228,7 +230,7 @@ end;
 | :status\_code | Native REST bind variable to assign HTTP status code |
 | :content\_type | Native REST bind variable to assign response content type |
 
-## Updating document content
+### Updating document content
 
 | URI Template           | Method | Source Type | Format |
 | ---------------------- | ------ | ----------- | ------ |
@@ -291,7 +293,7 @@ end;
 | :fileid | URI template parameter |
 | :status\_code | Native REST bind variable to assign HTTP status code |
 
-## Saving existing document as a copy with a new filename
+### Saving existing document as a copy with a new filename
 
 | URI Template  | Method | Source Type | Format |
 | ------------- | ------ | ----------- | ------ |
@@ -353,9 +355,9 @@ end;
 | :status\_code | Native REST bind variable to assign HTTP status code |
 | :body | Native REST bind variable referencing document content |
 
-# Error Handling
+## Error Handling
 
-## Creating a new document
+### Creating a new document
 
 ***
 
@@ -383,7 +385,7 @@ The error is raised when unhandled PL/SQL error is raised for example:
 
 
 
-## Getting document meta-data
+### Getting document meta-data
 
 When the plug-in catches error while fetching document meta-data, the end-user can still interact with the plug-in in the following way:
 
@@ -452,7 +454,7 @@ The error is raised when the plug-in REST handler catches unhandled PL/SQL error
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_error_get_meta_data_plsql_error.png?raw=true)
 
-## Getting document contents
+### Getting document contents
 
 When the plug-in catches error while fetching document meta-data, the end-user can still interact with the plug-in in the following way:
 
@@ -487,7 +489,7 @@ The error is raised when the plug-in REST handler catches unhandled error, for e
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_error_get_blob_unexpected_plsql.png?raw=true)
 
-## Updating document content
+### Updating document content
 
 When the plug-in catches error while fetching document meta-data, the end-user can still interact with the plug-in in the following way:
 
@@ -524,7 +526,7 @@ The error is raised when the plug-in REST handler catches unhandled error, for e
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_error_update_unexpected_plsql.png?raw=true)
 
-## Saving existing document as a copy with a new filename
+### Saving existing document as a copy with a new filename
 
 When the plug-in catches error while fetching document meta-data, the end-user can still interact with the plug-in in the following way:
 
@@ -577,7 +579,7 @@ The error is raised when the plug-in REST handler catches unhandled error, for e
 
 ![](https://github.com/United-Codes/apexofficeedit-public/blob/main/images/docs/REST_error_saveas_unexpected_plsql.png?raw=true)
 
-# Error debugging
+## Error debugging
 
 APEX Offce Edit logs every request made to the plug-in RESTful service handlers. When an error is raised it is displayed to the end-user. All REST handlers errors includes unique REST log ID allowing easy debugging with REST logs table.
 

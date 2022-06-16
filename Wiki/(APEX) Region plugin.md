@@ -1,6 +1,8 @@
+# APEX Plug-in
+
 The plug-in is an Oracle APEX region plug-in implementing LibreOffice Online framework.
 
-# Standard attributes
+## Standard attributes
 
 The plug-in uses the following standard attributes exposed in the APEX page designer:
 
@@ -11,15 +13,14 @@ The plug-in uses the following standard attributes exposed in the APEX page desi
 *   Has "CSS Class" Column Attribute
     
 *   Has "Custom Attributes" Column Attribute
-    
 
-# Custom attributes
+## Custom attributes
 
-## Application
+### Application
 
 All attributes available as **Component Settings** are listed and described below.
 
-### API Key
+#### API Key
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -27,7 +28,7 @@ All attributes available as **Component Settings** are listed and described belo
 
 Enter the valid API key. The API key is available in the APEX Office Edit portal: `https://www.apexofficeedit.com/ords/uc/r/aoe_portal/`
 
-### Server-Side URL
+#### Server-Side URL
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -37,7 +38,7 @@ Specify the URL under which the plug-in server-side files can be accessed. For e
 
 The default value is `https://api.apexofficeedit.com/`
 
-### URL to RESTful service module
+#### URL to RESTful service module
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -53,7 +54,7 @@ The valid URL to **ORDS RESTful service module** handling the plug-in operations
 
 The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**.  The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. and it must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
-### Default Document Filename
+#### Default Document Filename
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -61,11 +62,11 @@ The plug-in is delivered with the default ORDS RESTful service module named **AP
 
 The default name of a file when a new document is created. 
 
-## Component
+### Component
 
 All the plug-in region attributes available in the Oracle APEX page designer are listed and described below.
 
-### Allowed File Types
+#### Allowed File Types
 
 | Type     | Required | Dependent on |
 | :------- | :------- | :----------- |
@@ -83,7 +84,7 @@ Available options:<br>
 * Open Document Presentation
 * Open Document Draw
 
-### Settings
+#### Settings
 
 | Type     | Required | Dependent on |
 | :------- | :------- | :----------- |
@@ -100,7 +101,7 @@ Available options:
 | Use Custom Table            | **When selected**<br/>a developer can specify a table in which documents will be stored<br/><br/>**When not selected**<br/>The default table **AOE_FILES_DEFAULT** is used to store documents. Learn more about the table in **Database Objects**. |
 | Disable printing            | When selected the end-user can't print the document using browser print functionality - the editor print button is not displayed. <br/><br/>Printing should be only enabled when an APEX application implementing the plug-in is in the same origin as the AOE host server files. |
 
-### Server-Side URL
+#### Server-Side URL
 
 | Type | Required | Dependent on                                          |
 | :--- | :------- | :---------------------------------------------------- |
@@ -110,7 +111,7 @@ Specify the URL under which the plug-in server-side files can be accessed. For e
 
 The default value is `https://api.apexofficeedit.com/`
 
-### URL to RESTful service module
+#### URL to RESTful service module
 
 | Type | Required | Dependent on                                          |
 | :--- | :------- | :---------------------------------------------------- |
@@ -126,7 +127,7 @@ The valid URL to **ORDS RESTful service module** handling the plug-in operations
 
 The plug-in is delivered with the default ORDS RESTful service module named **APEX Office Edit**.  The URL must be copied from **SQL Workshop \ RESTful Services \ Module Definition**. and it must include the suffix `files/` for example `http://www.apexrnd.be/ords181/aoe/aoe/files/`.
 
-### Item(s) Containing Primary Key(s) Value(s)
+#### Item(s) Containing Primary Key(s) Value(s)
 
 | Type         | Required | Dependent on |
 | :----------- | :------- | :----------- |
@@ -142,7 +143,7 @@ Enter comma-delimited page items containing the primary key(s) value(s) of a doc
 
 Enter the page item containing the document's primary key **AOE_FILES_DEFAULT.ID**. 
 
-### Menu layout
+#### Menu layout
 
 | Type        | Required | Dependent on |
 | :---------- | :------- | :----------- |
@@ -155,7 +156,7 @@ Select the AOE editor menu layout to be used.
 | Classic      | An old-fashioned drop-down menu layout is used to render the editor menu. The classic layout supports hidding menu entries. <br/>Hidding menu entries can be set using the the plug-in region attribute **JavaScript Initialization Code**. <br/>To learn more read **Additional Meta Data \ Initialization JavaScript Code \ menuHideItems**. |
 | Notebook Bar | The menu layout is organized as tabs and menu entries are displayed along with corresponding icons. <br /><br />The notebook bar doesn't support hidding menu entries. |
 
-### Document Permissions
+#### Document Permissions
 
 | Type        | Required | Dependent on |
 | :---------- | :------- | :----------- |
@@ -169,7 +170,7 @@ Available options include:
 * Custom function returning document permissions - when selected, the PL/SQL function is used to return document permission. 
   See the attribute **Function Returning Document Permissions** to learn more.
 
-### Function Returning Document Permissions
+#### Function Returning Document Permissions
 
 | Type | Required | Dependent on                                                 |
 | :--- | :------- | :----------------------------------------------------------- |
@@ -219,7 +220,7 @@ Allowed values are `0` and `1`, where
 
 *   `1` is **permission granted**.
 
-### On Document Read Callback
+#### On Document Read Callback
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -262,7 +263,7 @@ procedure procedure_name(
 | p\_file\_version            | NUMBER    | A document current version                                   |
 | p\_file\_blob\_owner        | VARCHAR2  | A document author (the end-user that crated a document)Standard Attribute |
 
-### On Document Create Callback
+#### On Document Create Callback
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -305,7 +306,7 @@ procedure procedure_name(
 | p\_file\_version            | NUMBER    | A document current version                                   |
 | p\_file\_blob\_owner        | VARCHAR2  | A document author (the end-user that crated a document)      |
 
-### On Document Update Callback
+#### On Document Update Callback
 
 | Type | Required | Dependent on |
 | :--- | :------- | :----------- |
@@ -338,7 +339,7 @@ procedure procedure_name(
 | p\_file\_id\_new   | VARCHAR2 | **When a document is updated**  <br>always NULL<br>    <br>**When a document is saved as a new file**  <br>The primary key(s) value(s) of a new document saved with a new filename. If the plug-in uses multiple columns to identify a document, then primary key(s) value(s) are delimited by a colon. |
 | p\_user\_id        | VARCHAR2 | The end-user username used to authenticate in the APEX session   |
 
-### Function Returning a New Primary Key(s)
+#### Function Returning a New Primary Key(s)
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | :----------------------------------------- |
@@ -454,7 +455,7 @@ The plug-in access token properties are described in the table below.
 | document\_perm\_settings    | VARCHAR2(100)  | The value of the plug-in region attribute **Document Permissions**. The value can be one of the following:<br><br>*   FUNCTION<br>*   EVERYONE\_CAN\_READ\_AND\_EDIT<br>*   ONLY\_AUTHOR\_CAN\_READ\_AND\_EDIT<br>*   EVERYONE\_CAN\_READ\_AUTHOR\_EDIT |
 | document\_default\_filename | VARCHAR2(100)  | The value of the plug-in component setting **Default Document Filename** |
 
-### Table Name
+#### Table Name
 
 | Type | Required | Dependent on                               |
 | ---- | -------- | ------------------------------------------ |
@@ -477,7 +478,7 @@ A custom table must have (at least) the following types of columns:
 **Multiple Primary Keys**
 A custom table can use multiple primary keys to identify a document. Comma-delimited columns names must be set using the attribute **Primary Key(s) Column(s)**.
 
-### Document Primary Key(s) Column(s)
+#### Document Primary Key(s) Column(s)
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | :----------------------------------------- |
@@ -485,7 +486,7 @@ A custom table can use multiple primary keys to identify a document. Comma-delim
 
 Comma-delimited column names used as primary keys for a document.
 
-### Document File Content Column
+#### Document File Content Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | ------------------------------------------ |
@@ -493,7 +494,7 @@ Comma-delimited column names used as primary keys for a document.
 
 A column name which type is `BLOB` and is meant to store a document's file contents.
 
-### Document Filename Column
+#### Document Filename Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | :----------------------------------------- |
@@ -501,7 +502,7 @@ A column name which type is `BLOB` and is meant to store a document's file conte
 
 A column name which type is `VARCHAR2` and is meant to store a document's filename (including the file extension).
 
-### Document MIME Type Column
+#### Document MIME Type Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | ------------------------------------------ |
@@ -509,7 +510,7 @@ A column name which type is `VARCHAR2` and is meant to store a document's filena
 
 A column name which type is `VARCHAR2` and is meant to store a document's file MIME type.
 
-### Document Last Update Column
+#### Document Last Update Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | ------------------------------------------ |
@@ -517,7 +518,7 @@ A column name which type is `VARCHAR2` and is meant to store a document's file M
 
 A column name which type is `TIMESTAMP(6)` and is meant to store a document's last modification time.
 
-### Document Version Column
+#### Document Version Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | ------------------------------------------ |
@@ -525,7 +526,7 @@ A column name which type is `TIMESTAMP(6)` and is meant to store a document's la
 
 A column name which type is `VARCHAR2` and is meant to store a document's current version.
 
-### Document Owner Column
+#### Document Owner Column
 
 | Type | Required | Dependent on                               |
 | :--- | :------- | :----------------------------------------- |
@@ -533,9 +534,9 @@ A column name which type is `VARCHAR2` and is meant to store a document's curren
 
 A column name which type is `VARCHAR2` and is meant to store a document's owner name (APEX user name).
 
-# Additional Meta Data
+## Additional Meta Data
 
-## Initialization JavaScript Code
+### Initialization JavaScript Code
 
 The attribute value must be an anonymous function accepting only one parameter which is a JSON object containing all plug-in options rendered from the plug-in package on page load. The function must return this JSON object to initialize the plug-in. Specified object properties can be used to customize the plug-in UI and logging in the application debug mode enabled.
 
@@ -558,7 +559,7 @@ function( pOptions ) {
 
 The parameters which can be safely customized are described below:
 
-### **buttons** `Array`
+#### **buttons** `Array`
 
 An `Array` of JSON objects defining a custom button to be added to the AOE toolbar. Clicked button triggers **AOE Button Clicked** event. The possibility to add custom buttons is experimental and might be removed or updated. 
 
@@ -595,7 +596,7 @@ function( pOptions ) {
 }
 ```
 
-### **menuHideItems** `Array`
+#### **menuHideItems** `Array`
 
 An `Array` of menu entries IDs. The menu customization works only when the attribute **Menu layout** is set to **Classic**. The list of menu entries is the following:
 
@@ -608,23 +609,23 @@ An `Array` of menu entries IDs. The menu customization works only when the attri
 * menu **Tools** IDs: _tools_
 * menu **Help** IDs: _help, online, keyboard, report, about, last-mod_
 
-### **hideMenu** `Boolean`
+#### **hideMenu** `Boolean`
 
 Flag determining whether the document editor menu is displayed.
 
-### **hideRuler** `Boolean`
+#### **hideRuler** `Boolean`
 
 Flag determining whether the document editor shows ruler.
 
-### **logPrefixAsStaticId** `Boolean`
+#### **logPrefixAsStaticId** `Boolean`
 
 Flag determining whether the plug-in widget produces JavaScript logs (in application debug mode) using region static ID as the prefix or is using the default prefix. Enabling this property is helpful when debugging multiple instances of the plug-in on the same page.
 
-### **height** `Number`
+#### **height** `Number`
 
 The document editor's default height in `pixels`.
 
-### **zoomLevel** `Number`
+#### **zoomLevel** `Number`
 
 The list of zoom levels to be used for the is listed below:
 
@@ -649,28 +650,28 @@ The list of zoom levels to be used for the is listed below:
 *   level **19** = **400%**
 *   level **20** = **400%**
 
-### theme `String`
+#### theme `String`
 
 The property is used to apply **light** or **dark** theme. When set to
 
 - `light` - the light theme is used for the AOE editor
 - `dark` - the dark theme is used for the AOE editor
 
-### hidePoweredBy `Boolean`
+#### hidePoweredBy `Boolean`
 
 Flag determining whether the AOE logo is displayed in the new file panel.
 
-# Events
+## Events
 
 The plug-in exposes events that can be bound using APEX dynamic actions. The plug-in events are triggered on the DOM node with the class attribute set to **uc-aoe--widget**.
 
-## AOE Before Update
+### AOE Before Update
 
 The event `ucaoebeforeactionsave` is triggered when the end-user initializes updating the contents of a document using the AOE editor UI (or after performing the **CTRL+S** shortcut).
 
 The event is triggered without any additional data and it serves only an informative purpose indicating AOE starts updating the current document.
 
-## AOE After Update
+### AOE After Update
 
 The event `ucaoeafteractionsave` is triggered when a document is successfully saved by the REST handler updating document contents.
 
@@ -681,13 +682,13 @@ The event is triggered along with the data described in the table below.
 | this.data.**success** | Boolean | Boolean flag indicating if updating document contents was successful |
 | this.data.**msg** | JSON | JSON object containing postMessage `UC_Message` triggering the event |
 
-## AOE Before Save As
+### AOE Before Save As
 
 The event `ucaoebeforeactionsaveas` is triggered when the end-user provides a new filename and after clicking the button **Save as** in the plug-in dialog **Save as a new document**.
 
 The event is triggered without any additional data and it serves only an informative purpose indicating AOE starts saving a document as a new document with a given filename.
 
-## AOE After Save As
+### AOE After Save As
 
 The event `ucaoeafteractionsaveas` is triggered when the plug-in REST handler finishes processing the end-user request saving a document as a new file. The event is triggered along with the data described in the table below.
 
@@ -699,7 +700,7 @@ The event `ucaoeafteractionsaveas` is triggered when the plug-in REST handler fi
 
 When saving a document as a new file **is successful** the event is triggered twice. The first event is triggered with `this.data.reloaded` set to `false` and the second event is triggered with `this.data.reloaded` set to `true` when AOE finishes loading a new document.
 
-## AOE Button Clicked
+### AOE Button Clicked
 
 The event `ucaoebuttonclicked` is triggered when a custom button is clicked by the end-user.
 
@@ -717,7 +718,7 @@ The event is triggered along with the data described in the table below.
 | this.data.document.**pksColumns** | String | The column(s) name(s) defined as primary key(s)<br><br>**When attribute Settings \\ Custom table is not checked**<br />the value is always `ID`<br>    <br>**When attribute Settings \\ Custom table is checked**<br />the value of the plug-in region attribute **Item(s) Containing Primary Key(s) Value(s)** |
 | this.data.document.**pksValues** | String | The current value(s) of primary key(s)<br /><br />**When attribute Settings \\ Custom table is not checked**<br />the value stored in APEX Session State for item defined in the plug-in region attribute **Item Containing Primary Key Value**<br>    <br>**When attribute Settings \\ Custom table is checked**<br />the value stored in APEX Session State for item defined in the plug-in region attribute **Item(s) Containing Primary Key(s) Value(s)** |
 
-## AOE Document Loaded
+### AOE Document Loaded
 
 The event `ucaoedocumentloaded` is triggered every time a document is successfully loaded into the APEX Office Edit.
 
@@ -733,13 +734,13 @@ The event is triggered along with the data described in the table below.
 | this.data.document.**pksColumns** | String | The column(s) name(s) defined as primary key(s)<br><br>**When attribute Settings \\ Custom table is not checked**<br />the value is always `ID`<br>    <br>**When attribute Settings \\ Custom table is checked**<br />the value of the plug-in region attribute **Item(s) Containing Primary Key(s) Value(s)** |
 | this.data.document.**pksValues** | String | The current value(s) of primary key(s)<br><br>**When attribute Settings \\ Custom table is not checked**<br />the value stored in APEX Session State for item defined in the plug-in region attribute **Item Containing Primary Key Value**<br>    <br>**When attribute Settings \\ Custom table is checked**<br />the value stored in APEX Session State for item defined in the plug-in region attribute **Item(s) Containing Primary Key(s) Value(s)** |
 
-## AOE Initialized
+### AOE Initialized
 
 The event `ucaoeinitialized` is triggered as the result of the plug-in initialization process (the plug-in waits for the iframe **ready event** and then waits for postMessage **App\_LoadingStatus**). After receiving **App\_LoadingStatus** postMessage it is safe to assume that APEX Office Edit is initialized and the plug-in triggers the AOE Initialized event.
 
 The event is triggered without any additional data and it serves only an informative purpose indicating AOE editor is ready to be used by the end-user.
 
-## AOE Message
+### AOE Message
 
 The event `ucaoemessage` is triggered each time the plug-in receives the postMessage sent by the APEX Office Edit host server. Messages are used to communicate between AOE hosts with the plug-in implemented in an application.
 
@@ -751,7 +752,7 @@ The event is triggered along with the data described in the table below.
 | this.data.msg.**SendTime** | Number | Time stamp when message is sent (result of browser `Date.now()`) |
 | this.data.msg.**Values** | JSON | JSON object containing message data. Message data differs depending on message. |
 
-# Translation Messages
+## Translation Messages
 
 Some parts of the APEX Office Edit can be translated using **Oracle APEX Translation Texts**. 
 
