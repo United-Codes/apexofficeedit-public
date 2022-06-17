@@ -44,18 +44,18 @@ Example: Docker version 20.10.12, build e91ed57
 
 Pull the image of AOE from official registry.
 ```sh
-docker pull uc/aoe:initial
+docker pull unitedcodes/apexofficeedit
 ```
 
 ### AOE Container
 
 After downloading the image of AOE, new container can be run as follow:
 
-docker run -p 80:80 -e \"domain=\<dot-escaped-ords-server\>\" \--name aoe -d \--restart always uc/aoe:initial
+docker run -p 80:80 -e \"domain=\<dot-escaped-ords-server\>\" \--name aoe -d \--restart always unitedcodes/apexofficeedit
 
 Example:
 ```sh
-docker run -p 80:80 -e "domain=api\\.apexofficeedit\\.com\" --name aoe -d --restart always uc/aoe:initial
+docker run -p 80:80 -e "domain=api\\.apexofficeedit\\.com\" --name aoe -d --restart always unitedcodes/apexofficeedit
 ```
 
 Please check out all the configuration options that are available.
@@ -93,7 +93,7 @@ be provided while running the docker instance as:
 
 ```sh
 docker run -p 80:80 -e 'domain=api\\.apexofficeedit\\.com' -e 'username=admin' -e 'password=oracle' \
-       --name aoe -d --restart always uc/aoe:initial
+       --name aoe -d --restart always unitedcodes/apexofficeedit
 ```
 The other general run parameters can be found on:
 
