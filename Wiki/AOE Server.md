@@ -5,9 +5,6 @@
 
 ***High Level Architecture Diagram of AOE***
 
-![](../images/aoe/aoe_flowdiagram.png)
-***General Work flow between ORDS and AOE***
-
 
 ## Hardware Requirements
 
@@ -393,34 +390,56 @@ docker restart aoe
 ```
 ### Configuration file
 
-A lot of things can be configured from coolwsd.xml file. The file itself
+A lot of things can be configured from aop_config.jsonc file. The file itself
 contains comments which help with the configuration.
 
 For example:
 
-```xml
-<!-- Note: 'default' attributes are used to document a setting's default value as well as to use as fallback. -->
-<!-- Note: When adding a new entry, a default must be set in WSD in case the entry is missing upon deployment. -->
-<allowed_languages desc="List of supported languages of Writing Aids (spell checker, grammar checker, thesaurus, hyphenation) on this instance. Allowing too many has negative effect on startup performance." default="de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru">de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru</allowed_languages>
+```jsonc
+// List of supported languages of Writing Aids (spell checker, grammar checker, thesaurus, hyphenation) on this instance. Allowing too many has negative effect on startup performance. 
+// Default: de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru
+"written_language_support": [
+    "de_DE",
+    "en_GB",
+    "en_US",
+    "es_ES",
+    "fr_FR",
+    "it nl",
+    "pt_BR",
+    "pt_PT",
+    "ru"
+],
 ```
 
 #### Autosaving
 
 The following section should be modified
-```xml
-<!-- Idle save and auto save are checked every 30 seconds -->
-<!-- They are disabled when the value is zero or negative. -->
-<idlesave_duration_secs desc="The number of idle seconds after which document, if modified, should be saved. Defaults to 30 seconds." type="int" default="30">30</idlesave_duration_secs>
-<autosave_duration_secs desc="The number of seconds after which document, if modified, should be saved. Defaults to 5 minutes." type="int" default="300">300</autosave_duration_secs>
-<always_save_on_exit desc="On exiting the last editor, always perform the save, even if the document is not modified." type="bool" default="false">false</always_save_on_exit>
+
+```jsonc
+// The number of idle seconds after which document, if modified, should be saved. Defaults to 300 seconds (5 minutes).
+"idlesave_duration_secs": 300,
+// The number of seconds after which document, if modified, should be saved. Defaults to 300 secs or 5 minutes.
+"autosave_duration_secs": 300,
+// On exiting the last editor, always perform the save, even if the document is not modified. Defailts to false.
+"always_save_on_exit": false,
 ```
 
 #### Supported Languages
 
-```xml
-<allowed_languages desc="List of supported languages of Writing Aids (spell checker, grammar checker, thesaurus, hyphenation) on this instance. Allowing too many has negative effect on startup performance." default="de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru">
-    de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru
-</allowed_languages> 
+```jsonc
+// List of supported languages of Writing Aids (spell checker, grammar checker, thesaurus, hyphenation) on this instance. Allowing too many has negative effect on startup performance. 
+// Default: de_DE en_GB en_US es_ES fr_FR it nl pt_BR pt_PT ru
+"written_language_support": [
+    "de_DE",
+    "en_GB",
+    "en_US",
+    "es_ES",
+    "fr_FR",
+    "it nl",
+    "pt_BR",
+    "pt_PT",
+    "ru"
+], 
 ```
 
 #### Resource Optimization
@@ -466,8 +485,8 @@ docker cp font.ttf aoe:/user/local/share/fonts/font.ttf
 
 ### Network Configuration
 
-For developing environment, the AOE server has been set to run using http. If
-SSL is desired, it is recommended to use a proxy.
+Currently, AOE server only runs using http. If
+SSL is desired, it is recommended to use a proxy (or a load balancer if you are using cloud).
 
 #### Setting up Apache 2 reverse proxy
 
@@ -475,8 +494,7 @@ SSL is desired, it is recommended to use a proxy.
 
 mod_proxy_wstunnel should be enabled on httpd.conf file.
 
-The corresponding coolwsd settings are ssl.enable=false and
-ssl.termination=true.
+If using SSL, be sure to turn on ssl termination from aop_config.jsonc file.
 
 ```
 <VirtualHost *:443>
@@ -513,19 +531,16 @@ ssl.termination=true.
   ProxyPass           /hosting/discovery http://127.0.0.1:9980/hosting/discovery retry=0
   ProxyPassReverse    /hosting/discovery http://127.0.0.1:9980/hosting/discovery
 
-  # Capabilities
-  ProxyPass           /hosting/capabilities http://127.0.0.1:9980/hosting/capabilities retry=0
-  ProxyPassReverse    /hosting/capabilities http://127.0.0.1:9980/hosting/capabilities
 
   # Main websocket
-  ProxyPassMatch "/lool/(.*)/ws$" ws://127.0.0.1:9980/lool/$1/ws nocanon
+  ProxyPassMatch "/cool/(.*)/ws$" ws://127.0.0.1:9980/cool/$1/ws nocanon
 
   # Admin Console websocket
-  ProxyPass   /lool/adminws ws://127.0.0.1:9980/lool/adminws
+  ProxyPass   /cool/adminws ws://127.0.0.1:9980/cool/adminws
 
   # Download as, Fullscreen presentation and Image upload operations
-  ProxyPass           /lool http://127.0.0.1:9980/lool
-  ProxyPassReverse    /lool http://127.0.0.1:9980/lool
+  ProxyPass           /cool http://127.0.0.1:9980/cool
+  ProxyPassReverse    /cool http://127.0.0.1:9980/cool
 </VirtualHost>
 ```
 
@@ -533,7 +548,7 @@ ssl.termination=true.
 
 (https://web.archive.org/web/20210924112039/https://www.collaboraoffice.com/code/nginx-reverse-proxy/)
 
-The corresponding loolwsd settings are ssl.enable=false and ssl.termination=true.
+If using SSL, be sure to turn on ssl termination from aop_config.jsonc file.
 ```
 server {
     listen       443 ssl;
@@ -548,20 +563,8 @@ server {
         proxy_set_header Host $http_host;
     }
 
-    # AOE Server discovery URL
-    location ^~ /hosting/discovery {
-        proxy_pass http://localhost:9980;
-        proxy_set_header Host $http_host;
-    }
-
-    # Capabilities
-    location ^~ /hosting/capabilities {
-        proxy_pass http://localhost:9980;
-        proxy_set_header Host $http_host;
-    }
-
     # main websocket
-    location ~ ^/lool/(.*)/ws$ {
+    location ~ ^/cool/(.*)/ws$ {
         proxy_pass http://localhost:9980;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -570,13 +573,13 @@ server {
     }
 
     # download, presentation and image upload
-    location ~ ^/lool {
+    location ~ ^/cool {
         proxy_pass http://localhost:9980;
         proxy_set_header Host $http_host;
     }
 
     # Admin Console websocket
-    location ^~ /lool/adminws {
+    location ^~ /cool/adminws {
         proxy_pass http://localhost:9980;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -586,30 +589,6 @@ server {
 }
 ```
 
-#### Setting up SSL certificate without proxy
-
-If a valid SSL certificate is present, the certificate file and the pem
-file can be moved to the docker container. The files will need to be
-configured in the coolwsd file:
-
-```xml
-<ssl desc="SSL settings">
-    <enable type="bool" desc="Controls whether SSL encryption between browser and loolwsd is enabled (do not disable for production deployment). If default is false, must first be compiled with SSL support to enable." default="true">true</enable>
-    <termination desc="Connection via proxy where loolwsd acts as working via https, but actually uses http." type="bool" default="true">false</termination>
-    <cert_file_path desc="Path to the cert file" relative="false">/etc/loolwsd/cert.pem</cert_file_path>
-    <key_file_path desc="Path to the key file" relative="false">/etc/loolwsd/key.pem</key_file_path>
-    <ca_file_path desc="Path to the ca file" relative="false">/etc/loolwsd/ca-chain.cert.pem</ca_file_path>
-    <cipher_list desc="List of OpenSSL ciphers to accept" default="ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"></cipher_list>
-    <hpkp desc="Enable HTTP Public key pinning" enable="false" report_only="false">
-        <max_age desc="HPKP's max-age directive - time in seconds browser should remember the pins" enable="true">1000</max_age>
-        <report_uri desc="HPKP's report-uri directive - pin validation failure are reported at this URL" enable="false"></report_uri>
-        <pins desc="Base64 encoded SPKI fingerprints of keys to be pinned">
-            <pin></pin>
-        </pins>
-    </hpkp>
-</ssl>
-```
-
 #### SSL termination (when using proxy)
 
 When docker image is behind a proxy which usages https but connects to
@@ -617,45 +596,32 @@ docker image through plain http, the termination option should be set to
 true. This will cause the AOE page to use secure WebSocket protocol
 instead of plain WebSocket.
 
-```xml
-<termination desc="Connection via proxy where loolwsd acts as working via https, but actually uses http." type="bool" default="true">
-  false
-</termination>
+```jsonc
+// This should be true if users are accessing AOE through HTTPS.
+// Default:true
+"ssl_termination": true,
 ```
-
-### Configuring AOE Server URL in APEX pages
-
-In the APEX page with AOE file frame, there is a page item named:
-
-PXX_AOE_ACTION_URL
-
-The value of this page item should be changed so that it points to the
-AOE server:
-
-http(s)://\<Your server running AOE \>/browser/a21322665/cool.html
-
-or for example
-
-http://10.2.60.40/browser/a21322665/cool.html
-
-Please make sure that this server is reachable by the client.
 
 ### Adding IP as allowed hosts
 
 If a new URL (or host) needs access to AOE, the domain name or the IP
 address should be whitelisted or allowed. This can be done by editing
-the network settings in the coolwsd.xml file.
+the network settings in the aoe_config.jsonc file.
 
-```xml
-<post_allow desc="Allow/deny client IP address for POST(REST)." allow="true">
-    <host desc="The IPv4 private 192.168 block as plain IPv4 dotted decimal addresses.">
-      192\.168\.[0-9]{1,3}\.[0-9]{1,3}
-    </host>
-    <host desc="Ditto, but as IPv4-mapped IPv6 addresses">::ffff:192\.168\.[0-9]{1,3}\.[0-9]{1,3}</host>
-    <host desc="The IPv4 loopback (localhost) address.">127\.0\.0\.1</host>
-    <host desc="Ditto, but as IPv4-mapped IPv6 address">::ffff:127\.0\.0\.1</host>
-    <host desc="The IPv6 loopback (localhost) address.">::1</host>
-    <host desc="The IPv4 private 172.17.0.0/16 subnet (Docker).">172\.17\.[0-9]{1,3}\.[0-9]{1,3}</host>
-    <host desc="Ditto, but as IPv4-mapped IPv6 addresses">::ffff:172\.17\.[0-9]{1,3}\.[0-9]{1,3}</host>
-</post_allow>
+```jsonc
+// The ip addresses of the websites/ ip addresses which are allowed to use the AOE plugin.
+// Default:[
+//	  "10\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}",
+//	  "172\\.1[6789]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+//	  "172\\.2[0-9]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+//	  "172\\.3[01]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+//	  "192\\.168\\.[0-9]{1,3}\\.[0-9]{1,3}"
+//	]
+"allowed_iframe_hosts": [
+    "10\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}",
+    "172\\.1[6789]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+    "172\\.2[0-9]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+    "172\\.3[01]\\.[0-9]{1,3}\\.[0-9]{1,3}",
+    "192\\.168\\.[0-9]{1,3}\\.[0-9]{1,3}"
+]
 ```
